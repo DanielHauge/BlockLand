@@ -31,3 +31,20 @@ Blockchain project
 >- Everyone?
 >- Person trying to add.
 - Queing system for adding blocks?
+##### Deployment strategy
+- Dockerswarm?
+>- How many machines?
+>- Replica, or global?
+- Docker Compose?
+>- How many machines
+>- UI+node stack?
+##### Simulator
+- Language?
+>- C#
+>- Java
+>- Golang?
+##### Topic
+- What should the system actully do?
+>- Transactions?
+>- Chat system? (Simulator could use clever bot API haha xD, imagine 4 bots talking together)[Cleverbot API](https://www.cleverbot.com/api/)
+>- Other thing?
