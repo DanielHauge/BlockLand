@@ -1,8 +1,8 @@
 Requirements Analysis Document (RAD)
 ==================
 This is a Requirements Analysis Document by studentgroup: Emmely, Kristian, Daniel.
-The analysis is for a clone of Hacker News. Assignments description: [Here][1].
-This document come with an appendix, which is included in this repository. It can be found here: [Appendix](Requirements_Analysis_Appendix.md). The appendix has all the usecases.(But for hand-in 6/9 it is included in this document)
+The analysis is for a Blockchain. Assignments description: [Unknown][Unknown].
+This document come with an appendix, which is included in this repository. It can be found here: [Unknown](Requirements_Analysis_Appendix.md). The appendix has all the usecases.(But for hand-in Unknown it is included in this document)
 > **Content:**
 > -  1: [Introduction](#1-introduction)
 >> - A. [Purpose of the system](#a-purpose-of-the-system)
@@ -27,42 +27,37 @@ This document come with an appendix, which is included in this repository. It ca
 
 ### A. Purpose of the system
 ____________
-The system is made to allow users to share and discuss stories with a focus on programming and information systems, the system allows self regulation by allowing users to increase the visibility of some discussions, and for long time users to decrease the visibilty of others.
+The system is made to allow itself to communicate with other copies of itself, while using hash functions with the blockchain model, to make a self regulating autonomous system, while being able to be setup from any location.
 
 ### B. Scope of the system
 ____________
-The system needs to allow multiple users to interact with the server through a web browser and make their account which enables them to post stories and comments, and also enable them to give or take karma and report stories.
-The system will also include an API that can be used as an interface to interacting with the system.
+The system needs to be able to autonomously verify each action individual systems does are legal, while also keep track of every system that's currently active, while doing so over the internet or locally, yhe system will also share all data among other systems, while allowing new systems to join the network as fast as possible.
+The system will also include a API call function that allows outside users to initiate change or retrieve status of the "hive", through the use of a browser or postman.
 
 ### C. Objectives and success criteria of the project
 ____________
-The project must be able to handle multiple users posting stories and comments at the same time, while also having a minimum 95% uptime even while part of the system is down for upgrading. The project needs to allows users to make a program that can simulate user interaction that creates stories and comments using a REST API, also to query the latest ingested story. likewise the users should also be able to do these actions using a web browser as well.
+The project must be able to avoid any tempering of the blockchains data while a minimum of <50% systems are functioning correctly, the proecjt needs to allow users to forcefully override and instigate a change to the blockchain for observational and proof of concept purposes.
 
 ### D. Definitions, acronyms, and abbreviations
 ____________
-The term stories are used when we talk about the concept of posting news stories to the system. When we go into more technical details of the functionality of the system we use the term threads, but stories and threads are essentially the same thing.
-
-we will use HN User for Hacker news user.
-
-When we mention the system, we mean the broad concept of the whole system, which will include server and database and any other component that will effect the application.
+We will use the term "System" whenever we talk of a singular active autonomous unit or node, while we will use the term "Hive" when the sum of all active Systems are in play.
+When we use the term Database, we will be refering to the local systems database, as each system will have thier own personal database.
+We will use "Product" when we talk of the entire project as a solution.
 
 ### E. References
 ____________
-- Hacker News: https://news.ycombinator.com/newest.
-- Reddit: https://www.reddit.com/
+- Unknown
 
 ### F. Overview
 ____________
-The product will be a student project focused on making a copy of Hacker News from the ground up, while keeping it maintained over the duration of this semester. Around halfway through we will hand over testing to another group, who will send feedback on errors that we will have to repair while they are testing. In this period we'll test another groups project at the same time, and send them feedback on errors we encounter. This is to showcase our proficiency in building and maintaining a web based system as well as testing a foreign system and giving feedback that's useful to the owners of the system.
-
-
+The product will be a student project focused on making a decentralized product, this will be achieved through the use of P2P networking, the product must also be self regulated through the use of blockchains, in order to make it self verifying each change in the product.
 
 ----------
 
 
 2: Current system
 -------------------
-The system Hacker News is an online web forum news site, which shares many similarities with the popular site Reddit. it allows users of the website to register themselves with an account and share stories and comment on other users stories. additionaly users can give or take karma from stories and comments that increase or decreases their priority on the site. This allows the users to show what content that contributes to the discussion they have interest in. In the case of Hacker News it's any discussion on hacking, programming or news regarding these activities in general, while taking away focus from disruptive or unwanted discussion.
+The system called Bitcoing, is a only P2P network whoes purpose it to calculate hash values, it rewards each participants for discovering new hash values whenever the first finds a hash value and gets it verified by all other participents through the use of blockchains.
 
 
 ----------
@@ -72,60 +67,38 @@ The system Hacker News is an online web forum news site, which shares many simil
 -------------------
 ### A. Overview
 ____________
-The proposed system would be a both a REST API server, that handles the multiple users, and a Database that contains all the content of the system, which the user generated.
+The proposed product would be a P2P system with a API and a database, that enables it to communicate with other systems in a collective P2P Hive, this is to allow it to regulate and propose changes to the "hives" database for blockchain purposes.
 ### B. Functional requirements
 
-##### API User Functional requirements
-- The user must be able to submit thread via an API - UC7.
-- The user must be able to Comment on a thread via an API - UC9.
-- The user must be able to query the latest ingested comment or thread - UC8.
-
+##### API system Functional requirements
+- The system must be able to Mine a hashvalue
+- The system must be able to submit a mined hashvalue
+- The system must be able to verify a hash value
+- The system must be able to update it's database
+- The system must be able to share it's database content (both blockchain and connected systems)
+- The system must be able to connect to another system
 
 ------------------------------------------
-##### Human(Browser) User Functional requirements
-Account - This is extra if time allows
-- (extra) The users must be able to create a new account - UC1.
-- (extra) The users must be able to log in - UC 2.
-- (extra) The users must be able to change the password.
-- (extra) The users must be able to edit their user information - UC3.
-- (extra) The users must be able to see their user information.
-
-Posts
-- The users must be able to create a post thread - UC4.
-- (extra)The users must be able to flag posts.
-- (extra) The user must be able to search for posts
-- (extra) The user must be able to filter for posts on news, show, jobs and ask.
-- (extra) The users must be able to see his own submissions.
-
-Comments
-- The users must be able to comment on posts - UC5.
-- The users must be able to reply to comments - UC6
-- The users must be able to see all comments.
-- (extra) The users must be able to see his own comments.
-
-Karma points (Extra)
-- (extra)The users must be able to upvote posts
-- (extra)The users must be able to downvote posts, but only when user has above 500 karma points
-- (extra)The users must be able to see his her points.
-- (extra)The users should automatically be upgraded to vote when received 500 points or more.
+##### Human(API) User Functional requirements
+- The User must be able to instigate a new mining operation
+- The User must be able to receive update on system status
 
 ### C. Nonfunctional requirements
 ____________
 #### a. Usability
-- We will not put too much effort into the usability of the system since the main purpose, is that the system should be used via the API / Simulation program. Therefore the use of the web application will not be required to be exactly the same as hacker news.
+- We will not put too much effort into the usability of the system.
 #### b. Reliability
-- The web application needs to have 95% uptime.
-- The system cannot lose any information which has been sent from the simulation program or web users.
+- The system cannot lose any information which has been sent from another system.
+- the system cannot allow other systems to instigate false hashvalues in the shared blockchain.
 #### c. Performance
 - The system needs to be able to handle multiple users at one time.
 #### d. Supportability
 - (extra)The system needs to work on popular browsers such as Google Chrome, Mozilla Firefox, Safari, Internet Explorer 9.
-- The system needs to have a mechanism so that when users post content and the system is down, the content will be published to the system when it's operational again.
 #### e. Implementation
-- The system needs to have a REST API for the simulation program to simulate user activity.
+- The system needs to have a API for both the systems interaction with other systems, and for user interaction.
 #### f. Interface
-- The system needs to interact with a database for storage of user information and content.
-- The system needs to interact with a REST API for the simulation program and other users.
+- The system needs to interact with a database for storage of information.
+- The system needs to interact with a API for the Hive and outside users.
 #### g. Packing
 - No Packing(physical) requirements.
 #### h. Legal
@@ -136,9 +109,9 @@ ____________
 #### a. Scenarios
 
 ##### Scenario 1
-Scenario Name: Account Creation - UC1.
+Scenario Name: First system startup - UC1.
 
-Participating actor instances: **Tester:HN User & HackerNewsClone:System.**
+Participating actor instances: **Tester:System**
 
 Flow of events:
 1. Tester selects login in the menu
