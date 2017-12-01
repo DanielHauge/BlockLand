@@ -111,61 +111,66 @@ ____________
 ##### Scenario 1
 Scenario Name: First system startup - UC1.
 
-Participating actor instances: **Tester:System**
+Participating actor instances: **Tester:User && System**
 
 Flow of events:
-1. Tester selects login in the menu
-2. HackerNewsClone presents a form for creating a new account
-3. Tester completes filling in the form and then submits.
-4. (B) Tester is prompted that the user name has been taken.
+1. Tester starts system without IP
+2. System starts up on it's own IP
 
 ##### Scenario 2
-Scenario Name: Login - UC2.
+Scenario Name: System startup - UC2.
 
-Participating actor instances: **Tester:HN User & HackerNewsClone:System.**
+Participating actor instances: **Tester:User && System**
 
 Flow of events:
-1. Tester selects Login
-2. HackerNewsClone presents a form for login
-3. Tester completes the form by inputting username and password and then submits.
-4. (A) HackerNewsClone responds by going back to the previous page Tester was on. New links are added to the menu, links for an introduction to HN, threads and edit profile information.
+1. Tester starts system with IP
+2. System connects to given IP
+3A. System fails to connect to IP and closes down
+3B. System succesfully connects to IP
+4. System gets updated information from the system it connected too
+5. System begins it's function.
 
 ##### Scenario 3
-Scenario Name: Submit Thread - UC4.
+Scenario Name: Mine Hashvalue - UC3.
 
-Participating actor instances: **Tester:HN User & HackerNewsClone:System.**
+Participating actor instances: **System && Hive**
 
 Flow of events:
-1. Tester selects submit
-2. HackerNewsClone responds with a submit form
-3. Tester fill in the form giving a Title and URL linking to the news article and submits
-4. (A) HackerNewsClone responds with a thread successfully submitted message
+1. System chooses to change the data in it's blockchain
+2. System mines for the new hash value that satify the blockchains requirements
+3. System sends out the newly mined data to all other known systems in hive
+4A. Hive returns illegal and the systems drops the new blockchain
+4B. Hive returns verified and the system saves the new blockchain in it's database
+5. the system sends out a signal to all other system that the blockchain was added.
 
 ##### Scenario 4
-Scenario Name: API-Query - UC8.
+Scenario Name: Verify Hashvalue - UC4.
 
-Participating actor instances: **Helge's Program:Simulator program & HackerNewsClone:System.**
+Participating actor instances: **System && Hive**
 
 Flow of events:
-1. Helge's Program requests the HackerNewsClone's API for the latest ingested thread or comment.
-2. (C) HackerNewsClone's API responds with status: System is unreachable or offline.
+1. System recieves a blockchain to verify from another system in the hive
+2. System mines the hash value with the data given and checks the hashvalue result
+3A. System finds error in the verification and sends out a signal to all other Systems
+-A. System gets enough errors from the hive that verifies the data is false
+-AA. System drops the Data
+-B. System gets enough signals from the hive that verifies the data is correct
+-BB. Systems adds the Data
+3B. System Verifies the content and send out a signal to all other Systems
+-A. System gets enough signals from the hive that verifies the data is correct
+-AA. Systems adds the Data
+-B. System gets enough errors from the hive that verifies the data is false
+-BB. System drops the Data
 
 ##### Scenario 5
-Scenario Name: Story Discussion - UC2, UC5, UC6.
+Scenario Name: Instigate Change - UC5.
 
-Participating actor instances: **Anders:HN User, Anna:HN User & HackerNewsClone:System.**
+Participating actor instances: **Tester:User && System**
 
 Flow of events:
-1. Anders logs into Hacker News on his break at work. He sees Anna's story about a subject he is very passionate about. Since he is already logged in he opens up the story to view the discussion.
-2. The system presents Anders with details of the story, view of the story discussion and a form to make a comment.
-3. Anders fills in a comment and submits it.
-4. Later that evening Anna sits in front of the TV she picks up her smart phone and open Hacker News. She can see that more comments have been added to her story. She clicks on the story to view more details.
-5. The system presents Anna with details of the story, and view of the discussion and a form to make a comment. Anna sees Anders comment, she chooses to answer by clicking reply on the comment.
-6. Because Anna is not yet logged in, the system presents the Anna with a form to log in or create a new account.
-7. Anna fills in her user name and password to log in.
-8. The system presents the story details, and a form to reply. 
-9. Anna fills in an answer and submits.
-10. The system presents the Anna with the page of the story of the discussion she replied to.
+1. Tester makes a Post call though Postman to a System.
+2. System Stops it's own Scenario 3
+3. System start a new Scenario 3 with the Post call data
 
 
 #### b. Use case model
