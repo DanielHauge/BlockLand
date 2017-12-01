@@ -5,6 +5,7 @@ import (
 	"log"
 )
 
+
 type Message struct {
 	Kind string
 	Username string
@@ -30,7 +31,7 @@ func (msg *Message) send_all(){
 	if testing {log.Println("send_all")}
 	if testing {log.Println(Connections)}
 	for _,peerConnection := range Connections{
-		enc:=json.NewEncoder(peerConnection)
+		enc := json.NewEncoder(peerConnection)
 		enc.Encode(msg)
 	}
 }

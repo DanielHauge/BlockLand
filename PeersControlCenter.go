@@ -37,8 +37,8 @@ func server(){
 		if testing {log.Println("Accepted Connection")}
 		go receive(conn)
 	}
-
 }
+
 
 func receive(conn net.Conn){
 
@@ -74,6 +74,7 @@ func receive(conn net.Conn){
 		}
 	}
 }
+
 
 //introduces peer to the chat
 func introduceMyself(IP string){
@@ -121,6 +122,7 @@ func createConnection(IP string) (conn net.Conn){
 }
 
 
+
 func disconnect(msg Message){
 	mutex.Lock()
 	delete(PeerIPs, msg.Username)
@@ -128,6 +130,7 @@ func disconnect(msg Message){
 	mutex.Unlock()
 	log.Println(msg.Username + " left")
 }
+
 
 
 func handleConnect(msg Message, conn net.Conn) bool{
@@ -150,6 +153,7 @@ func handleConnect(msg Message, conn net.Conn) bool{
 	return true
 
 }
+
 
 //checks to see if a userName is already in the list
 func alreadyAUser(user string) bool {
