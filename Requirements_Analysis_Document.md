@@ -131,7 +131,26 @@ Flow of events:
 5. System begins it's function.
 
 ##### Scenario 3
-Scenario Name: Mine Hashvalue - UC3.
+Scenario Name: System update - UC3.
+
+Participating actor instances: **System && Hive**
+
+Flow of events:
+1. x mins passed on local system
+2. system calls a random system from the hive it knows for updated list of systems in hive
+3. system compares all given lists and update it's list with the majority in mind
+
+##### Scenario 4
+Scenario Name: System startup - UC4.
+
+Participating actor instances: **System x && System Y**
+
+Flow of events:
+1. System X gets a update call from system Y
+2. System X sends it's list of known systems to system Y
+
+##### Scenario 5
+Scenario Name: Mine Hashvalue - UC5.
 
 Participating actor instances: **System && Hive**
 
@@ -143,8 +162,8 @@ Flow of events:
 4B. Hive returns verified and the system saves the new blockchain in it's database
 5. the system sends out a signal to all other system that the blockchain was added.
 
-##### Scenario 4
-Scenario Name: Verify Hashvalue - UC4.
+##### Scenario 6
+Scenario Name: Verify Hashvalue - UC6.
 
 Participating actor instances: **System && Hive**
 
@@ -162,174 +181,172 @@ Flow of events:
 -B. System gets enough errors from the hive that verifies the data is false
 -BB. System drops the Data
 
-##### Scenario 5
-Scenario Name: Instigate Change - UC5.
+##### Scenario 7
+Scenario Name: Instigate Change - UC7.
 
 Participating actor instances: **Tester:User && System**
 
 Flow of events:
 1. Tester makes a Post call though Postman to a System.
-2. System Stops it's own Scenario 3
-3. System start a new Scenario 3 with the Post call data
+2. System Stops it's own Scenario 5
+3. System start a new Scenario 5 with the Post call data
 
+##### Scenario 8
+Scenario Name: Get status - UC6.
+
+Participating actor instances: **Tester:User && System**
+
+Flow of events:
+1. Tester makes a Get call though Postman to a System.
+2. System returns a json formulated response containing it's database content.
 
 #### b. Use case model
 
 ###### UC1
-Use case name: Create New Account.
+Use case name: First system startup.
 
-Participating actors: HN User - System.
+Participating actors: User -> System.
 
 Flow of events.
 
-1. User selects Login in the menu.
-2. The system presents a form for creating a new account.
-3. The user completes the form by filling in username and password. The user then submits the form.
+1. User starts System through console command without IP.
+2. System begins it's function.
 
-Pre-conditions: The user is not already logged into an account.
+Pre-conditions: There are no existing systems running.
 
 Post-conditions:
-- A: The system responds by going back to the previous page the user was on. A link with the user name and number of karma points shows up in the menu. Links with the title welcome and threads also shows up in the menu.
-- B: User is prompted that the user name has been taken.
-- C: Invalid username or password
+- A: The system is running and listening on it's own IPv4.
 
 ----------------------------
 ###### UC2
-Use case name: Login.
+Use case name: System startup.
 
-Participating actors: HN User -> System.
+Participating actors: User -> System.
 
 Flow of events:
-1. User selects Login
-2. The system presents a form for login.
-3. The user completes the form by filling in username and password. The user then submits the form.
+1. User starts System through console command with IP.
+2. System connects to given IP.
+3. System gets updated information from the system it connected too.
+4. System begins it's function.
 
-Precondition: The user has an account, and is not already logged in to an account.
+Precondition: Atleast one System is running.
+
+Post-conditions:
+- A: System succesfully connects to the Hive.
 
 Exit condition:
-- A: The system responds by going back to the previous page the user was on. New links are added to the menu, links for an introduction to HN, threads and edit profile information.
-- B: User is prompted that the user name or password was incorrect.
+- A: System fails to connects and closes down.
 
 --------------------------------
 ###### UC3
-Use case name: Update User Information.
+Use case name: System update.
 
-Participating actors: HN User -> System.
+Participating actors: System -> Hive.
+
+Flow of events.
+
+1. x mins passed on local system
+2. system calls a random system from the hive it knows for updated list of systems in hive
+3. system compares all given lists and update it's list with the majority in mind
+
+Pre-conditions: The Hive contains atleast 1 other System.
+
+Post-conditions:
+- A: The system gets it's list of IPs updated
+- B: The system gets signals and begins listening on it's own IPv4
+
+----------------------------
+###### UC4
+Use case name: First system startup.
+
+Participating actors: System X && System Y.
+
+Flow of events.
+
+1. System X gets a update call from system Y
+2. System X sends it's list of known systems to system Y
+
+Pre-conditions: The Hive contains atleast 1 other System.
+
+Post-conditions:
+- A: System Y gets it's list of IPs updated by comparing System Xs and all others in the Hive by UC3.
+
+----------------------------
+###### UC5
+Use case name: Mine Hashvalue.
+
+Participating actors: System -> Hive
 
 Flow of events:
-1. Users select the link to user information.
-2. The system responds by presenting a form to the HN User, with the editable fields for the accounts information.  and noneditable information about the HN User.
-3. The HN User make changes and submits the form.
+1. System chooses to change the data in it's blockchain.
+2. System mines for the new hash value that satify the blockchains requirements.
+3. System sends out the newly mined data to all other known systems in hive.
+4. Hive returns verified and the system saves the new blockchain in it's database.
+5. System sends out a signal to all other system that the blockchain was added.
 
-Pre-conditions: The users are logged in.
+Pre-conditions: The Hive contains equal or more than 2 other Systems.
 
 Post-conditions: 
-- A: The system responds by presenting the form with the updated information.
-- B: The system present to the user that something went wrong.
+- A: The Hive collectively adds the new blockchain to thier databases.
+- B. Hive returns illegal and the systems drops the new blockchain
 
 --------------------------------
-###### UC4
-Use case name: Submit a thread.
+###### UC6
+Use case name: Verify Hashvalue.
 
-Participating actors: HN User -> System.
+Participating actors: System -> Hive -> System.
 
 Flow of events:
-1. The user selects the link to submit in the main menu.
-2. The system responds with a submit form.
-3. The user fills in the form giving a Title and URL linking to the news article. Leave URL blank to submit a question for discussion. If there is no URL, the text (if any) will appear at the top of the thread. Titles beginning with "Show HN" will appear under show.
+1. System recieves a blockchain to verify from another system in the hive
+2. System mines the hash value with the data given and checks the hashvalue result
+3A. System finds error in the verification and sends out a signal to all other Systems
+-A. System gets enough errors from the hive that verifies the data is false
+-AA. System drops the Data
+-B. System gets enough signals from the hive that verifies the data is correct
+-BB. Systems adds the Data
+3B. System Verifies the content and send out a signal to all other Systems
+-A. System gets enough signals from the hive that verifies the data is correct
+-AA. Systems adds the Data
+-B. System gets enough errors from the hive that verifies the data is false
+-BB. System drops the Data
 
-Pre-condition: The users are logged in.
+Pre-condition: The Hive contains equal or more than 2 other Systems.
 
 Post-condition:
-- A: The system responds with a thread successfully submitted message
-- B: The system present to the user that something went wrong.
+- A: The Hive collectively adds the data to thier database.
+- B: The Hive collectively ignores the data.
 
 -------------------------------
-###### UC5
-Use cast name: Comment on a thread.
-
-Participating actors: HN User -> System.
-
-Flow of events:
-1. The user selects to comment on a specific a thread in the display of stories.
-2. The system responds with a form and details about the thread, and previous comments. The thread information is made up by the title, the number of points, creator of the thread, days since threaded, number of comments. The comments are presented with the username of comment submitter, days since threaded, the comments and a link to reply.
-3. The user fills in the comment in the form and submits it.
-
-Pre-condition: The users are logged in.
-
-Post-condition:
-- A: The system responds with showing the page of the comments.
-- B: The system present to the user that something went wrong.
-
------------------------------------------
-###### UC6
-Use case name: Reply to a thread comment.
-
-Participating actors: HN User -> System.
-
-Flow of events:
-1. The user selects the comment section of a thread.
-2. The system responds with a form and details about the thread and previous comments. The thread information is made up by the title, the number of points, creator of the thread, days since threaded, number of comments. The comments are presented in a hierarchy 
-3. The user selects reply to a comment.with the username of comment submitter, days since threaded, the comments and a link to reply.
-4. The system responds with a form the title of the thread and the parent comment to reply to.
-5. The HN user writes the reply by filling in the form and submitting. 
-
-Pre-condition: The users are logged in.
-
-Post-condition:
-- A: The system responds with showing the page of the comment.
-- B: The system present to the user that something went wrong.
------------------------------------------
 ###### UC7
-Use case name: Create Thread.
+Use cast name: Instigate Change.
 
-Participating actors: Simulator Program -> System.
+Participating actors: User -> System.
 
 Flow of events:
-1. The user submits a post to the system API. The post consists of a Title, Text or URL.
+1. Tester makes a Post call though Postman to a System.
+2. System Stops it's own Scenario 5
+3. System start a new Scenario 5 with the Post call data
 
-Pre-condition: none
+Pre-condition: the selected System is running
 
 Post-condition:
-- A: The system API responds with a successful response and details about the created post.
-- B: The system API responds with error and details about the error.
-- C: The system API responds with status: System is unreachable, most likely offline.
+- A: The system engages UC5 but with the intentional data instead of the random data.
 
---------------------------------
+-----------------------------------------
 ###### UC8
-Use case name: Query system.
+Use case name: Get status.
 
-Participating actors: Simulator Program -> System.
-
-Flow of events:
-1. The user requests the systems API for the latest ingested thread or comment.
-
-Precondition: None
-
-Post-condition:
-- A: The system API responds with a thread or comment
-- B: The system API responds with status: System is upgrading
-- C: The system API responds with status: System is unreachable, most likely offline.
-------------------------------
-###### UC9
-
-Use case name: API Create Comment.
-
-Participating actors: Simulator Program -> System.
+Participating actors: User -> System.
 
 Flow of events:
+1. Tester makes a Get call though Postman to a System.
+2. System returns a json formulated response containing it's database content.
 
-1. The user submits a comment with a designated thread.
-
-Pre-condition: 
-
-1. An existing thread for the comment to be added too.
+Pre-condition: System is running and contains data in it's database
 
 Post-condition:
-
-- A: The system API responds with a successful response and details about the created post.
-- B: The system API responds with error and details about the error.
-- C: The system API responds with status: System is unreachable, most likely offline.
+- A: The system responds with data
+-----------------------------------------
 
 
 - [Usecases](Requirements_Analysis_Appendix.md)
