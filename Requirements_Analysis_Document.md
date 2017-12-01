@@ -137,7 +137,7 @@ Participating actor instances: **System && Hive**
 
 Flow of events:
 1. x mins passed on local system
-2. system calls a random system from the hive it knows for updated list of systems in hive
+2. system calls all system from the hive it knows for updated list of systems in hive
 3. system compares all given lists and update it's list with the majority in mind
 
 ##### Scenario 4
@@ -246,7 +246,7 @@ Participating actors: System -> Hive.
 Flow of events.
 
 1. x mins passed on local system
-2. system calls a random system from the hive it knows for updated list of systems in hive
+2. system calls all system from the hive it knows for updated list of systems in hive
 3. system compares all given lists and update it's list with the majority in mind
 
 Pre-conditions: The Hive contains atleast 1 other System.
