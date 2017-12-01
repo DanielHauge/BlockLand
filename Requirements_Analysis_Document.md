@@ -168,18 +168,18 @@ Scenario Name: Verify Hashvalue - UC6.
 Participating actor instances: **System && Hive**
 
 Flow of events:
-1. System recieves a blockchain to verify from another system in the hive
-2. System mines the hash value with the data given and checks the hashvalue result
-3A. System finds error in the verification and sends out a signal to all other Systems
--A. System gets enough errors from the hive that verifies the data is false
--AA. System drops the Data
--B. System gets enough signals from the hive that verifies the data is correct
--BB. Systems adds the Data
-3B. System Verifies the content and send out a signal to all other Systems
--A. System gets enough signals from the hive that verifies the data is correct
--AA. Systems adds the Data
--B. System gets enough errors from the hive that verifies the data is false
--BB. System drops the Data
+1. System recieves a blockchain to verify from another system in the hive  
+2. System mines the hash value with the data given and checks the hashvalue result  
+3A. System finds error in the verification and sends out a signal to all other Systems  
+-A. System gets enough errors from the hive that verifies the data is false  
+-AA. System drops the Data  
+-B. System gets enough signals from the hive that verifies the data is correct  
+-BB. Systems adds the Data  
+3B. System Verifies the content and send out a signal to all other Systems  
+-A. System gets enough signals from the hive that verifies the data is correct  
+-AA. Systems adds the Data  
+-B. System gets enough errors from the hive that verifies the data is false  
+-BB. System drops the Data  
 
 ##### Scenario 7
 Scenario Name: Instigate Change - UC7.
@@ -297,18 +297,18 @@ Use case name: Verify Hashvalue.
 Participating actors: System -> Hive -> System.
 
 Flow of events:
-1. System recieves a blockchain to verify from another system in the hive
-2. System mines the hash value with the data given and checks the hashvalue result
-3A. System finds error in the verification and sends out a signal to all other Systems
--A. System gets enough errors from the hive that verifies the data is false
--AA. System drops the Data
--B. System gets enough signals from the hive that verifies the data is correct
--BB. Systems adds the Data
-3B. System Verifies the content and send out a signal to all other Systems
--A. System gets enough signals from the hive that verifies the data is correct
--AA. Systems adds the Data
--B. System gets enough errors from the hive that verifies the data is false
--BB. System drops the Data
+1. System recieves a blockchain to verify from another system in the hive  
+2. System mines the hash value with the data given and checks the hashvalue result  
+3A. System finds error in the verification and sends out a signal to all other Systems  
+-A. System gets enough errors from the hive that verifies the data is false  
+-AA. System drops the Data  
+-B. System gets enough signals from the hive that verifies the data is correct  
+-BB. Systems adds the Data  
+3B. System Verifies the content and send out a signal to all other Systems  
+-A. System gets enough signals from the hive that verifies the data is correct  
+-AA. Systems adds the Data  
+-B. System gets enough errors from the hive that verifies the data is false  
+-BB. System drops the Data  
 
 Pre-condition: The Hive contains equal or more than 2 other Systems.
 
