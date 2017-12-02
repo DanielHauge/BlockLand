@@ -19,4 +19,39 @@ var routes = Routes{
 		Index,
 	},
 
+	Route{
+		"Join",
+		"GET",
+		"/join",
+		Join,
+	},
+
+	Route{
+		"Unjoin",
+		"DELETE",
+		"/join",
+		UnJoin,
+	},
+
+	Route{
+		"Status",
+		"GET",
+		"/status",
+		Status,
+	},
+
+	Route{
+		"Answer",
+		"POST",
+		"/answer",
+		AnswerOffer,
+	},
+
+	Route{
+		"Status",
+		"GET",
+		"/moveout",
+		MoveOut,
+	},
+
 }

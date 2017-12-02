@@ -12,11 +12,11 @@ const PORT = ":2017"
 
 var (
 
-	PeerIPs = make(map[string]string)
-	Connections = make(map[string]net.Conn)
-	Name string
-	testing bool = true
-	mutex = new(sync.Mutex)
+	PeerIPs = make(map[string]string)   /// Username:IP
+	Connections = make(map[string]net.Conn) /// Username:TCPConnection
+	Name string /// Username of this process (Node)
+	testing bool = true /// This users setting for testing
+	mutex = new(sync.Mutex)  /// This users multiplexer
 
 )
 
@@ -56,6 +56,17 @@ func receive(conn net.Conn){
 		case "YELL":
 			if testing {log.Println("KIND = YELL")}
 			log.Println("i just yelled something: " + msg.MSG)
+
+		case "JOIN":
+			if testing {log.Println("KIND = JOIN!")}
+
+		case "UNJOIN":
+			if testing {log.Println("KIND = UNJOIN!")}
+
+		case "HEALTH":
+			if testing {log.Println("KIND = HEALTH!")}
+
+
 
 		case "DISCONNECT":
 			if testing {log.Println("KIND = DISCONNECT")}

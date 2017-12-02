@@ -14,3 +14,27 @@ func Index(w http.ResponseWriter, r *http.Request) {
 	msg.send_all()
 }
 
+
+func Join(w http.ResponseWriter, r *http.Request){
+
+	msg := createMessage("JOIN", Name, getMyIP(), Name, make([]string, 0), make([]string, 0))
+	msg.send_all()
+}
+
+func UnJoin(w http.ResponseWriter, r *http.Request){
+
+	msg := createMessage("UNJOIN", Name, getMyIP(), Name, make([]string, 0), make([]string, 0))
+	msg.send_all()
+}
+
+func Status(w http.ResponseWriter, r *http.Request){
+
+}
+
+func AnswerOffer(w http.ResponseWriter, r *http.Request){
+
+}
+
+func MoveOut(w http.ResponseWriter, r *http.Request){
+
+}
