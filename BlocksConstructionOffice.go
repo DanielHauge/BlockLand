@@ -42,6 +42,26 @@ type ProofOfWork struct {
 	target *big.Int
 }
 
+
+func (b *ProofOfWork) PoWSerialize() []byte {
+	var result bytes.Buffer
+	enc := json.NewEncoder(&result)
+	err := enc.Encode(b)
+	if err != nil {log.Println("Something went wrong with encoding POW to json byte array")}
+
+	return result.Bytes()
+}
+
+func PoWDeserialize(d []byte) *ProofOfWork {
+	var pow ProofOfWork
+
+	dec := json.NewDecoder(bytes.NewReader(d))
+	err := dec.Decode(&pow)
+	if err != nil {log.Println("Something went wrong with decoding POW to struct with json")}
+
+	return &pow
+}
+
 /*
 This is just a generic method for getting a new block struct. It will take some data and timestamp(ID) and the previus blocks hash
 This will be called by addblock method of the blockchain struct.

@@ -13,6 +13,7 @@ type Message struct {
 	MSG string
 	Usernames []string
 	IPs []string
+	Block []byte
 }
 
 func createMessage(Kind string, Username string, IP string, MSG string, Usernames []string, IPs []string) (msg *Message) {
@@ -23,6 +24,7 @@ func createMessage(Kind string, Username string, IP string, MSG string, Username
 	msg.MSG = MSG
 	msg.Usernames = Usernames
 	msg.IPs = IPs
+
 	return
 }
 

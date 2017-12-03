@@ -48,10 +48,16 @@ var routes = Routes{
 	},
 
 	Route{
-		"Status",
+		"Move Out",
 		"GET",
 		"/moveout",
 		MoveOut,
+	},
+	Route{
+		"Chain",
+		"GET",
+		"/chain",
+		GetChain,
 	},
 
 }

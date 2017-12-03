@@ -40,52 +40,6 @@ func server(){
 }
 
 
-func receive(conn net.Conn){
-
-	if testing {log.Println("receive")}
-	defer conn.Close()
-	dec := json.NewDecoder(conn)
-	msg:= new(Message)
-	for {
-		if err := dec.Decode(msg); err != nil { return }
-
-		switch msg.Kind{
-		case "CONNECT":
-			if testing {log.Println("KIND = CONNECT")}
-			if !handleConnect(*msg, conn){return}
-		case "YELL":
-			if testing {log.Println("KIND = YELL")}
-			log.Println("i just yelled something: " + msg.MSG)
-
-		case "JOIN":
-			if testing {log.Println("KIND = JOIN!")}
-
-		case "UNJOIN":
-			if testing {log.Println("KIND = UNJOIN!")}
-
-		case "HEALTH":
-			if testing {log.Println("KIND = HEALTH!")}
-
-
-
-		case "DISCONNECT":
-			if testing {log.Println("KIND = DISCONNECT")}
-			disconnect(*msg)
-			return
-		case "HEARTBEAT":
-			log.Println("HEARTBEAT")
-		case "LIST":
-			if testing {log.Println("KIND = LIST")}
-			connectToPeers(*msg)
-			return
-		case "ADD":
-			if testing {log.Println("KIND = ADD")}
-			addPeer(*msg)
-
-		}
-	}
-}
-
 
 //introduces peer to the chat
 func introduceMyself(IP string){

@@ -19,7 +19,7 @@ type BlockChainReader struct {
 	db 		*bolt.DB
 }
 
-
+var BlockChain *Blockchain
 
 /*
 This is a method to be called with a instanced Blockchain struct.
@@ -53,7 +53,28 @@ func (chain *Blockchain) AddBlock(data string) {
 
 }
 
+func (chain *Blockchain) AddKnownGoodBlock(pow *ProofOfWork) {
 
+	if pow.InspectGemCarat() {
+		err := chain.db.Update(func(tx *bolt.Tx) error {
+			b := tx.Bucket([]byte("blocksBucket"))
+			err := b.Put(pow.block.Hash, pow.block.Serialize())
+			err = b.Put([]byte("1"), pow.block.Hash)
+			chain.top = pow.block.Hash
+			return err
+		})
+
+		if err != nil {
+			log.Println("Something went wrong with adding a block")
+			log.Println(err.Error())
+		}
+		log.Println("Everything was fine and the block has been added")
+	}
+
+
+
+
+}
 
 /*
 This is initializing a Blockchain with the first block which is a empty block with no previusblock hash, but with the data "Genesis Block" and a timestamp.
