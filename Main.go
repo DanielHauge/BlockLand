@@ -7,7 +7,7 @@ import (
 )
 
 
-// Args= 1: host, 2: Username
+// Args= 1: host, 2: Username, 3: Port
 
 func main() {
 
@@ -21,7 +21,7 @@ func main() {
 	log.Println("Initiazling API")
 
 	router := NewRouter()
-	log.Fatal(http.ListenAndServe(":8080", router))
+	log.Fatal(http.ListenAndServe(os.Args[3], router))
 	log.Println("DONE [x]")
 
 

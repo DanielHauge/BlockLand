@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"log"
 	"strconv"
+
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {
@@ -61,14 +62,23 @@ func Status(w http.ResponseWriter, r *http.Request){
 	if DiscussionInSession {
 		fmt.Fprintln(w,"\n\nDiscussion is in session")
 		fmt.Fprintln(w, "\nSpeaker: "+DiscussionSpeaker)
-		fmt.Fprintln(w, "\n\nParticipants: \n")
-		for _, b := range DiscussionParticipants{
-			fmt.Fprintf(w, "%s\n", b)
+
+		if Name == DiscussionSpeaker{
+
+			fmt.Fprintln(w, "\n\nParticipants: \n")
+			for _, b := range DiscussionParticipants{
+				fmt.Fprintf(w, "%s\n", b)
+			}
+			fmt.Fprintln(w, "\n\nCurrentAgreements")
+			for a, b := range DiscussionAgreement{
+				fmt.Fprintf(w, "Seat: %s - Vote: %s\n", a,strconv.FormatBool(b))
+			}
+
+		}else {
+			fmt.Fprintln(w, "Go to "+PeerIPs[DiscussionSpeaker]+DiscussionSpeakerPort+"/status for more info")
 		}
-		fmt.Fprintln(w, "\n\nCurrentAgreements")
-		for a, b := range DiscussionAgreement{
-			fmt.Fprintf(w, "Seat: %s - Vote: %s\n", a,strconv.FormatBool(b))
-		}
+
+
 	} else {
 		fmt.Fprintln(w, "No discussion is in session")
 	}

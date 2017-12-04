@@ -4,12 +4,12 @@ import (
 	"time"
 	"log"
 	"github.com/boltdb/bolt"
+	"os"
 )
 
 type Discussion struct {
 	Data string
 	owner string
-
 }
 
 
@@ -24,6 +24,7 @@ var (
 
 	DiscussionInSession bool
 	DiscussionSpeaker string
+	DiscussionSpeakerPort string
 	DiscussionQueue chan Discussion
 	DiscussionAgreement map[string]bool
 	DiscussionParticipants []string
@@ -53,7 +54,7 @@ func StartDiscussion(dis Discussion) {
 		DiscussionParticipants = []string{}
 		DiscussionInSession = true
 		Users, IPS := getFromMap(PeerIPs)
-		Proposal := createMessage("SESSION-PROPOSAL", Name, getMyIP(), "Here's my list of participants", Users, IPS)
+		Proposal := createMessage("SESSION-PROPOSAL", Name, getMyIP(), os.Args[3], Users, IPS)
 		Proposal.send_all()
 
 		VotingTime := make(chan bool)
@@ -155,10 +156,12 @@ func StartDiscussion(dis Discussion) {
 	}
 }
 
+
 func EndDiscussion(){
 	BlockChain.AddKnownGoodBlock(DiscussionBlock)
 	DiscussionBlock = nil
 	DiscussionSpeaker = ""
+	DiscussionSpeakerPort = ""
 	DiscussionAgreement = map[string]bool{}
 	DiscussionParticipants = make([]string,0)
 	DiscussionInSession = false

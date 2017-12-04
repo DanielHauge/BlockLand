@@ -2,10 +2,11 @@ package main
 
 import "log"
 
-func ShareMyFellowPeeps(speaker string, speakersUsernames []string){
+func ShareMyFellowPeeps(speaker string, speakersUsernames []string, speakerport string){
 
 	Users, IPS := getFromMap(PeerIPs)
 	DiscussionInSession = true
+	DiscussionSpeakerPort = speakerport
 	if (CrossCheckList(Users, speakersUsernames) && len(Users) == len(speakersUsernames)){
 
 		HeadCountMessage := createMessage("SESSION-HEAD-COUNT", Name, getMyIP(), "Yes", Users, IPS)

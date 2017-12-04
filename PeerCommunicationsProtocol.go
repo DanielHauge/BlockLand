@@ -45,7 +45,7 @@ func receive(conn net.Conn){
 			HeadCount(msg.Username, msg.MSG, msg.Usernames)
 
 		case "SESSION-PROPOSAL":
-			ShareMyFellowPeeps(msg.Username, msg.Usernames)
+			ShareMyFellowPeeps(msg.Username, msg.Usernames, msg.MSG)
 
 		case "DISCUSSION-TO-QUEUE":
 			DiscussionQueue <- createDiscussion(msg.Username, msg.MSG)
