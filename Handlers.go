@@ -43,6 +43,7 @@ func UnJoin(w http.ResponseWriter, r *http.Request){
 
 func Status(w http.ResponseWriter, r *http.Request){
 
+	fmt.Fprintln(w, "My Username: "+Name+"\n\n")
 	fmt.Fprintln(w, "Network IPs")
 	for a, b := range PeerIPs{
 		fmt.Fprintf(w, "User: %v\n", a)

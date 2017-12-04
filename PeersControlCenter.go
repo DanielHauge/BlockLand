@@ -43,12 +43,14 @@ func server(){
 
 //introduces peer to the chat
 func introduceMyself(IP string){
+
 	if testing {log.Println("introduceMyself")}
 	conn:=createConnection(IP)
 	enc:= json.NewEncoder(conn)
 	introMessage:= createMessage("CONNECT", Name , getMyIP(), "", make([]string, 0), make([]string, 0))
 	enc.Encode(introMessage)
 	go receive(conn)
+
 }
 
 
@@ -100,10 +102,12 @@ func disconnect(msg Message){
 
 func handleConnect(msg Message, conn net.Conn) bool{
 	if testing {log.Println("handleConnect")}
+
 	Users, IPS := getFromMap(PeerIPs)
 	Users = append(Users, Name)
 	IPS = append(IPS, getMyIP())
 	response := createMessage("LIST", "", "", "", Users, IPS)
+	log.Println(Users)
 	if alreadyAUser(msg.Username){
 		response.MSG="Username already taken, choose another one that is not in the list"
 		response.send_all()

@@ -7,6 +7,7 @@ func ShareMyFellowPeeps(speaker string, speakersUsernames []string, speakerport 
 	Users, IPS := getFromMap(PeerIPs)
 	DiscussionInSession = true
 	DiscussionSpeakerPort = speakerport
+	DiscussionSpeaker = speaker
 	if (CrossCheckList(Users, speakersUsernames) && len(Users) == len(speakersUsernames)){
 
 		HeadCountMessage := createMessage("SESSION-HEAD-COUNT", Name, getMyIP(), "Yes", Users, IPS)
@@ -22,8 +23,15 @@ func CrossCheckList(list1 []string, list2 []string) bool{
 	result := true
 
 	for _, b := range list1{
+
 		if !DoesUserExist(b, list2){
 			result = false
+			log.Println("User didn't exist!: "+b)
+
+			if b == Name || b == DiscussionSpeaker{
+				result = true
+				log.Println("Ohh it was Speaker or Me")
+			}
 		}
 	}
 
@@ -36,8 +44,9 @@ func DoesUserExist(name string, strings []string) bool {
 	for _, b := range strings{
 		if b == name {
 			result = true
-			log.Println("Oooohh found a user, it exists!")
+
 		}
+		log.Println(b)
 	}
 
 
