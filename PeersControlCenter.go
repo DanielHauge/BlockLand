@@ -49,6 +49,8 @@ func introduceMyself(IP string){
 	enc:= json.NewEncoder(conn)
 	introMessage:= createMessage("CONNECT", Name , getMyIP(), "", make([]string, 0), make([]string, 0))
 	enc.Encode(introMessage)
+	GiveMeChainMessage:= createMessage("GIVEMECHAIN", Name, getMyIP(), "Please and thank you", make([]string, 0), make([]string, 0))
+	enc.Encode(GiveMeChainMessage)
 	go receive(conn)
 
 }
@@ -88,6 +90,14 @@ func createConnection(IP string) (conn net.Conn){
 	return
 }
 
+func ReplyWithChain(user string) {
+	wg.Wait()
+	ReplyMessage := createMessage("CHAINREPLY", Name, getMyIP(), "here you go", make([]string, 0), make([]string, 0))
+	mem := MemoryBlockChain{}
+	mem.AllBlocks = BlockChain.BlockChainToMemory()
+	ReplyMessage.Block = mem.Serialize()
+	ReplyMessage.sendPrivate(user)
+}
 
 
 func disconnect(msg Message){

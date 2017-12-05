@@ -40,6 +40,17 @@ func receive(conn net.Conn){
 		case "JOIN-PROPOSITION-ANSWER":
 			CountVotes(msg.Username, msg.MSG)
 
+		case "GIVEMECHAIN":
+			ReplyWithChain(msg.Username)
+
+		case "CHAINREPLY":
+			log.Println("OOOOH I GOT REPLY!")
+			if chainrequest{
+				log.Println("OOHH I TRY TO FILL IN!")
+				FillInChain(msg.Block, msg.MSG)
+				chainrequest = false
+				wg.Done()
+			}else {log.Println("ohh i wasn't set for filling!")}
 
 		case "SESSION-HEAD-COUNT":
 			HeadCount(msg.Username, msg.MSG, msg.Usernames)

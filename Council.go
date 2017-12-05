@@ -96,7 +96,7 @@ func StartDiscussion(dis Discussion) {
 			}
 
 			newBlock := NewBlock(dis.Data, lastHash)
-
+			DiscussionBlock = GenerateProofOfWork(newBlock)
 
 			Proposal := createMessage("JOIN-PROPOSITION", Name, getMyIP(), "Here is my Block", Users, IPS)
 			Proposal.Block = newBlock.Serialize()
@@ -122,8 +122,9 @@ func StartDiscussion(dis Discussion) {
 				/*
 				PROPOSITION HAS PASSED -> Everyone agrees -> Fire off to add to the chain!
 				 */
-				join := createMessage("JOIN", Name, getMyIP(), "Everyone agrees", Users, IPS)
+				join := createMessage("END", Name, getMyIP(), "Everyone agrees", Users, IPS)
 				join.send_all()
+				EndDiscussion()
 
 			} else {
 				/*

@@ -3,6 +3,8 @@ package main
 import (
 	"log"
 	"github.com/boltdb/bolt"
+	"bytes"
+	"encoding/json"
 )
 
 // go get github.com/boltdb/bolt
@@ -17,6 +19,35 @@ type Blockchain struct {
 type BlockChainReader struct {
 	cur_hash []byte
 	db 		*bolt.DB
+}
+
+type MemoryBlockChain struct {
+	AllBlocks []*Block
+}
+
+func CreateMemoryChain() *MemoryBlockChain {
+	result := new(MemoryBlockChain)
+	result.AllBlocks = BlockChain.BlockChainToMemory()
+	return result
+}
+
+func (b *MemoryBlockChain) Serialize() []byte {
+	var result bytes.Buffer
+	enc := json.NewEncoder(&result)
+	err := enc.Encode(b)
+	if err != nil {log.Println("Something went wrong with encoding blockchain to json byte array")}
+
+	return result.Bytes()
+}
+
+func DeserializeChain(d []byte) *MemoryBlockChain {
+	var blockchain MemoryBlockChain
+
+	dec := json.NewDecoder(bytes.NewReader(d))
+	err := dec.Decode(&blockchain)
+	if err != nil {log.Println("Something went wrong with decoding block to struct with json")}
+
+	return &blockchain
 }
 
 var BlockChain *Blockchain
@@ -76,6 +107,23 @@ func (chain *Blockchain) AddKnownGoodBlock(pow *ProofOfWork) {
 
 }
 
+
+func (chain *Blockchain) BlockChainToMemory() []*Block{
+	result := []*Block{}
+	bcreader := BlockChain.GetReader()
+	for {
+		block := bcreader.Next()
+
+		result = append(result, block)
+
+		if len(block.PrevBlockHash) == 0 {
+			break
+		}
+	}
+
+	return result
+}
+
 /*
 This is initializing a Blockchain with the first block which is a empty block with no previusblock hash, but with the data "Genesis Block" and a timestamp.
  */
@@ -88,6 +136,35 @@ func NewBlockChain() *Blockchain {
 
 		if b == nil{
 			firstblock := BirthFirstBlock()
+			b, err := tx.CreateBucket([]byte("blocksBucket"))
+			err = b.Put(firstblock.Hash, firstblock.Serialize())
+			err = b.Put([]byte("1"), firstblock.Hash)
+			top = firstblock.Hash
+			return err
+		} else {
+			top = b.Get([]byte("1"))
+			return err
+		}
+	})
+	if err != nil{
+		log.Println("Something went wrong with the DB Connection")
+	}
+
+	bc := Blockchain{top, db}
+
+
+	return &bc
+}
+
+func NewBlockChainWithStart(block *Block) *Blockchain {
+	var top []byte
+	db, err := bolt.Open("dbFile", 0600, nil)
+
+	err = db.Update(func(tx *bolt.Tx) error {
+		b := tx.Bucket([]byte("blocksBucket"))
+
+		if b == nil{
+			firstblock := block
 			b, err := tx.CreateBucket([]byte("blocksBucket"))
 			err = b.Put(firstblock.Hash, firstblock.Serialize())
 			err = b.Put([]byte("1"), firstblock.Hash)
@@ -136,5 +213,21 @@ func (reader *BlockChainReader) Next() *Block {
 }
 
 
+func FillInChain(chain []byte, OriginTop string){
+
+	memchain := DeserializeChain(chain)
+	BlockChain = NewBlockChainWithStart(memchain.AllBlocks[len(memchain.AllBlocks)-1])
+	if len(memchain.AllBlocks)>1{
+		for i := len(memchain.AllBlocks)-2; i>0; i--{
+			block := memchain.AllBlocks[i]
+
+			BlockChain.AddKnownGoodBlock(GenerateProofOfWork(block))
+
+
+		}
+	}
+	log.Println("Finished filling in Chain!")
+
+}
 
 
