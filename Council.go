@@ -5,6 +5,7 @@ import (
 	"log"
 	"github.com/boltdb/bolt"
 	"os"
+	"strconv"
 )
 
 type Discussion struct {
@@ -24,6 +25,7 @@ var (
 
 	DiscussionInSession bool
 	DiscussionSpeaker string
+	DiscussionTopic string
 	DiscussionSpeakerPort string
 	DiscussionQueue chan Discussion
 	DiscussionAgreement map[string]bool
@@ -40,7 +42,9 @@ func StartDiscussion(dis Discussion) {
 
 
 		Proposal := createMessage("DISCUSSION-TO-QUEUE", Name, getMyIP(), "Here's my list of participants", make([]string, 0), make([]string, 0))
+
 		Proposal.send_all()
+		DiscussionQueue <- dis
 
 
 	} else {
@@ -50,6 +54,7 @@ func StartDiscussion(dis Discussion) {
 		PARTICIPANTS CHECKING -> Speaker will count who is here and who is not here, any disagreement will result in a veto
 		 */
 		DiscussionSpeaker = dis.owner
+		DiscussionTopic = "Participants Voting"
 		DiscussionAgreement = map[string]bool{}
 		DiscussionParticipants = []string{}
 		DiscussionInSession = true
@@ -80,6 +85,7 @@ func StartDiscussion(dis Discussion) {
 
 			log.Println("Discussion succesfully started, everyone agrees on participants")
 			log.Println("Will start to mine and work and then send to others for approval")
+			DiscussionTopic = "Mining Block"
 			DiscussionAgreement = map[string]bool{}
 
 
@@ -101,6 +107,7 @@ func StartDiscussion(dis Discussion) {
 			Proposal := createMessage("JOIN-PROPOSITION", Name, getMyIP(), "Here is my Block", Users, IPS)
 			Proposal.Block = newBlock.Serialize()
 			Proposal.send_all()
+			DiscussionTopic = "Discussing legality of block"
 
 			VotingTime := make(chan bool)
 
@@ -133,7 +140,7 @@ func StartDiscussion(dis Discussion) {
 				 */
 
 
-
+				log.Println("UUUUH SOMETHING WENT WRONG!!!!!!, council members didn't agree. Disagreement: "+strconv.Itoa(CountCouncilMembersDecision()))
 
 			}
 

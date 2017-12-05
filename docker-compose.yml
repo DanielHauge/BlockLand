@@ -12,6 +12,8 @@ services:
     ports:
       - "8081:8080"
     entrypoint: ./go Node1 Helge :8081
+    depends_on:
+          - "Node1"
    Node3:
     image: p2ptest:2
     links: 
@@ -19,6 +21,8 @@ services:
     ports:
       - "8082:8080"
     entrypoint: ./go Node1 Kristian :8082
+    depends_on:
+      - "Node1"
    Node4:
     image: p2ptest:2
     links: 
@@ -26,20 +30,35 @@ services:
     ports:
       - "8083:8080"
     entrypoint: ./go Node1 Emmely :8083
-   Node4:
+    depends_on:
+          - "Node1"
+   Node5:
     image: p2ptest:2
     links: 
     - Node1
     ports:
       - "8084:8080"
     entrypoint: ./go Node1 Tine :8084
-   Node5:
+    depends_on:
+          - "Node1"
+   Node6:
     image: p2ptest:2
     links: 
     - Node1
     ports:
       - "8085:8080"
     entrypoint: ./go Node1 Jens :8085
+    depends_on:
+          - "Node1"
+   Node7:
+    image: p2ptest:2
+    links:
+    - Node1
+    ports:
+      - "8086:8080"
+    entrypoint: ./go Node1 Anders :8086
+    depends_on:
+          - "Node1"
        
 
     

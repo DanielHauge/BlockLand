@@ -5,7 +5,9 @@ import (
 	"net/http"
 	"log"
 	"strconv"
-
+ 	"github.com/shurcooL/github_flavored_markdown"
+	"bytes"
+	"gopkg.in/russross/blackfriday.v2"
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {
@@ -43,46 +45,50 @@ func UnJoin(w http.ResponseWriter, r *http.Request){
 
 func Status(w http.ResponseWriter, r *http.Request){
 
-	fmt.Fprintln(w, "My Username: "+Name+"\n\n")
-	fmt.Fprintln(w, "Network IPs")
+	var buffer bytes.Buffer
+	buffer.WriteString("# BlockLand Status!\n\n")
+	buffer.WriteString("## Username: **"+Name+"**\n\n")
+	buffer.WriteString("----------------------\n\n")
+	buffer.WriteString("----------------------\n\n")
+	buffer.WriteString("## Network\n\n")
+	buffer.WriteString("| User              | IP                  | TCP Connection          |\n")
+	buffer.WriteString("| ----------------- |:-------------------:| -----------------------:|\n")
 	for a, b := range PeerIPs{
-		fmt.Fprintf(w, "User: %v\n", a)
-		fmt.Fprintf(w, "IP: %v\n", b)
-		fmt.Fprintln(w)
+		constring := fmt.Sprintf("%v", Connections[a])
+		buffer.WriteString("| "+a+" | "+b+" | "+constring+" |\n")
 	}
-
-	fmt.Fprintln(w)
-	fmt.Fprintln(w, "Network TCP connections")
-	for a, b := range Connections{
-		fmt.Fprintf(w, "User: %v\n", a)
-		fmt.Fprintf(w, "Connection: %v\n", b)
-		fmt.Fprintln(w)
-
-	}
+	buffer.WriteString("\n## Discussion\n\n")
+	buffer.WriteString("\n##### Discussion queue: "+strconv.Itoa(len(DiscussionQueue))+"\n\n")
 
 	if DiscussionInSession {
-		fmt.Fprintln(w,"\n\nDiscussion is in session")
-		fmt.Fprintln(w, "\nSpeaker: "+DiscussionSpeaker)
+		buffer.WriteString("### Discussion in session - Topic: "+DiscussionTopic+"\n\n")
+		buffer.WriteString("###### Speaker: "+DiscussionSpeaker+"\n\n")
 
 		if Name == DiscussionSpeaker{
 
-			fmt.Fprintln(w, "\n\nParticipants: \n")
+			buffer.WriteString("##### Participants\n\n")
 			for _, b := range DiscussionParticipants{
-				fmt.Fprintf(w, "%s\n", b)
+				buffer.WriteString(b+", ")
 			}
-			fmt.Fprintln(w, "\n\nCurrentAgreements")
+			buffer.WriteString("\n\n##### Current Agreements\n\n")
+			buffer.WriteString("| User              | Vote                |\n")
+			buffer.WriteString("| ----------------- |:-------------------:|\n")
 			for a, b := range DiscussionAgreement{
-				fmt.Fprintf(w, "Seat: %s - Vote: %s\n", a,strconv.FormatBool(b))
+				buffer.WriteString("| "+a+" | "+strconv.FormatBool(b)+" |\n")
 			}
+			buffer.WriteString("\n")
 
 		}else {
-			fmt.Fprintln(w, "Go to "+PeerIPs[DiscussionSpeaker]+DiscussionSpeakerPort+"/status for more info")
+			buffer.WriteString("Go to ```"+PeerIPs[DiscussionSpeaker]+DiscussionSpeakerPort+"/status``` for more info\n\n")
 		}
 
 
 	} else {
-		fmt.Fprintln(w, "No discussion is in session")
+		buffer.WriteString("No discussion is in session\n\n")
 	}
+
+	markdown := blackfriday.Run([]byte(buffer.String()))
+	w.Write(markdown)
 
 }
 
@@ -96,22 +102,38 @@ func MoveOut(w http.ResponseWriter, r *http.Request){
 
 func GetChain(w http.ResponseWriter, r *http.Request){
 
+	var buffer bytes.Buffer
+
+	buffer.WriteString("# Full Blockchain\n\n")
+	buffer.WriteString("User: "+Name+"\n\n")
+	buffer.WriteString("| Index | Nounce | Data              | Hash                         | Prev. hash                      | Proof of Work |\n")
+	buffer.WriteString("|:-----:|:-------------:|:--------------------------- |:--------------------------------------------------- |:----------------------------------------------------------- |:-------------:|\n")
 	bcreader := BlockChain.GetReader()
 	test := 0
 	for {
 		block := bcreader.Next()
 		test ++
+		pow := GenerateProofOfWork(block)
+		buffer.WriteString("| "+fmt.Sprintf("%x", test)+" | "+strconv.Itoa(block.Nounce)+" | "+fmt.Sprintf("%s", block.Data) + " | "+ fmt.Sprintf("%x", block.Hash)+" | "+fmt.Sprintf("%x", block.PrevBlockHash)+" | "+fmt.Sprintf("%s", strconv.FormatBool(pow.InspectGemCarat()))+" |\n")
+
+		/*
 		fmt.Fprintf(w,"Number: %x\n", test)
 		fmt.Fprintf(w, "Nounce: %v\n", block.Nounce)
 		fmt.Fprintf(w, "Data: %s\n", block.Data)
 		fmt.Fprintf(w,"Hash: %x\n", block.Hash)
 		fmt.Fprintf(w,"Prev. Hash: %x\n", block.PrevBlockHash)
-		pow := GenerateProofOfWork(block)
 		fmt.Fprintf(w, "PoW: %s\n", strconv.FormatBool(pow.InspectGemCarat()))
+
 		fmt.Fprintln(w)
+		*/
 
 		if len(block.PrevBlockHash) == 0 {
 			break
 		}
 	}
+
+
+	markdown := blackfriday.Run([]byte(buffer.String()))
+	rendered := github_flavored_markdown.Markdown(markdown)
+	w.Write(rendered)
 }
