@@ -16,3 +16,7 @@ Blockchain project
 - Mining speed will not matter for our council style = Structured fairness.
 - When does it stop working, how many blocks can be sent over TCP
 - UML diagram: Sequence + component diagram.
+
+## Wishfull thinking
+- Docker swarm
+- Grafana/prometheus
