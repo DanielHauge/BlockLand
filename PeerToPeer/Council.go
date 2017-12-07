@@ -182,6 +182,21 @@ func EndDiscussion(){
 
 }
 
+func AbourtDiscussion(){
+	DiscussionBlock = nil
+	DiscussionSpeaker = ""
+	DiscussionSpeakerPort = ""
+	DiscussionAgreement = map[string]bool{}
+	DiscussionParticipants = make([]string,0)
+	DiscussionInSession = false
+	if len(DiscussionQueue) > 0{
+		NewDiscussion := <-DiscussionQueue
+		if NewDiscussion.owner == Name{
+			StartDiscussion(NewDiscussion)
+		}
+	}
+}
+
 
 
 
