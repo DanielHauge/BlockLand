@@ -94,7 +94,7 @@ func Status(w http.ResponseWriter, r *http.Request){
 	queueNo := helpGetStatusInQueue()
 	obj := QueueStatus{queueNo, "something"}
 	msgs, err := json.Marshal(obj); if err != nil{fmt.Println(err) }
-	fmt.Fprint(w, string(msgs)
+	fmt.Fprint(w, string(msgs))
 }
 
 func AnswerOffer(w http.ResponseWriter, r *http.Request){
@@ -132,7 +132,6 @@ func GetChain(w http.ResponseWriter, r *http.Request){
 	w.Write(rendered)
 }
 
-<<<<<<< HEAD:Handlers.go
 func helpGetStatusInQueue() int {
 	bcreader := BlockChain.GetReader()
 
@@ -156,7 +155,7 @@ func helpGetStatusInQueue() int {
 			name := c[0]
 			command := c[1]
 			_, inarray  := contains(a, name);
-			if command == "join" && !inarray) {
+			if command == "join" && !inarray {
 				queue = append(queue, name)
 			} else if command == "unjoin" && inarray  {
 				queue = remove( queue , name )
