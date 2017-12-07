@@ -14,11 +14,13 @@ type QueueStatus struct {
 }
 
 func DeserializeQueue(obj []byte) QueueStatus{
+
 	var qs QueueStatus
 	if err := json.Unmarshal(obj, &qs); err != nil {
 		log.Println(err.Error())
 	}
 	return qs
+
 }
 
 func (qs QueueStatus) Serialize() []byte {
@@ -37,6 +39,7 @@ func CreateQueueStatus(queue []string, queuenumber int) (QS QueueStatus){
 
 
 func ConstructQueue() []string{
+
 	var result []string
 	var chain []string
 	bcreader := BlockChain.GetReader()
@@ -92,10 +95,12 @@ func reverseArray(array []string) []string{
 }
 
 func LeaveQueue(array []string, user string) []string{
+	temp := []string{}
 	for i, u := range array{
-		if u == user{
-			return append(array[:i], array[i+1:]...)
-		}
+		if u != user{
+			temp = append(temp, array[i])
+		}else {log.Println("Uhh found user -> will not add to temp")}
+
 	}
-	return array
+	return temp
 }
