@@ -65,7 +65,7 @@ func ConstructQueue() []string{
 
 				} else if stringSet[1] == "leave"{
 					log.Println("it was a leave")
-				result = LeaveQueue(result, a)
+				result = LeaveQueue(result, stringSet[1])
 			}
 
 		} else {log.Println("Do nothing, it was genesis block")}

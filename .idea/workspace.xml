@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="278a682c-7a8e-4e8d-9e2b-8dd8587c1c3a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/PeerToPeer/Handlers.go" afterPath="$PROJECT_DIR$/PeerToPeer/Handlers.go" />
       <change beforePath="$PROJECT_DIR$/PeerToPeer/QueueHQ.go" afterPath="$PROJECT_DIR$/PeerToPeer/QueueHQ.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,8 +56,8 @@
       <file leaf-file-name="QueueHQ.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PeerToPeer/QueueHQ.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1080">
-              <caret line="102" column="40" lean-forward="false" selection-start-line="102" selection-start-column="40" selection-end-line="102" selection-end-column="40" />
+            <state relative-caret-position="485">
+              <caret line="67" column="56" lean-forward="false" selection-start-line="67" selection-start-column="56" selection-end-line="67" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -323,8 +322,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PeerToPeer/QueueHQ.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="102" column="40" lean-forward="false" selection-start-line="102" selection-start-column="40" selection-end-line="102" selection-end-column="40" />
+        <state relative-caret-position="485">
+          <caret line="67" column="56" lean-forward="false" selection-start-line="67" selection-start-column="56" selection-end-line="67" selection-end-column="56" />
           <folding />
         </state>
       </provider>
