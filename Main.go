@@ -14,7 +14,11 @@ var initialized = false
 var wg sync.WaitGroup
 
 // go get github.com/shurcooL/github_flavored_markdown
+type QueueStatus struct {
+	queuenumber int
+	queuelog string
 
+}
 func main() {
 
 	Name = os.Args[2]
