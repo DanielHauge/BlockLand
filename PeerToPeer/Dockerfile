@@ -25,6 +25,7 @@ COPY PeerCommunicationsProtocol.go PeerCommunicationsProtocol.go
 COPY PeersControlCenter.go PeersControlCenter.go
 COPY Router.go Router.go
 COPY Routes.go Routes.go
+COPY QueueHQ.go QueueHQ.go
 
 
 EXPOSE 8080
