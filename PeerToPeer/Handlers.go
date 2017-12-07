@@ -127,9 +127,10 @@ func GetQueue(w http.ResponseWriter, r *http.Request){
 	buffer.WriteString("User: "+Name+"\n\n")
 	buffer.WriteString("| Queue Number | User |\n")
 	buffer.WriteString("|:------------:| ----:|\n")
-
+	log.Println(len(queue))
 	for i, u := range queue{
-		buffer.WriteString("| "+strconv.Itoa(i+1)+" | "+u)
+		log.Println(strconv.Itoa(i)+" - "+u)
+		buffer.WriteString("| "+strconv.Itoa(i+1)+" | "+u+" |\n")
 		if (u == Name){
 			mypos = "\n\n### You are at position: "+strconv.Itoa(i+1)+"\n\n"
 		}
