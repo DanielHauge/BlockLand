@@ -9,8 +9,8 @@ import (
 )
 
 type QueueStatus struct {
-	queue []string `json:"queue"`
-	queuenumber int `json:"queuenumber"`
+	Queue []string `json:"queue"`
+	Queuenumber int `json:"queuenumber"`
 }
 
 func DeserializeQueue(obj []byte) QueueStatus{
@@ -35,7 +35,7 @@ func (qs QueueStatus) Serialize() []byte {
 }
 
 func CreateQueueStatus(queue []string, queuenumber int) (QS QueueStatus){
-	QS = QueueStatus{queue:queue, queuenumber:queuenumber}
+	QS = QueueStatus{Queue:queue, Queuenumber:queuenumber}
 	return
 }
 

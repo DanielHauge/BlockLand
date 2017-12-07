@@ -146,13 +146,17 @@ func GetQueue(w http.ResponseWriter, r *http.Request){
 func GetSimulationData(w http.ResponseWriter, r *http.Request){
 	qu := ConstructQueue()
 	var n int
+	log.Println(len(qu))
 	for i, u := range qu{
+		log.Println(u)
 		if u == Name{
 			n = i+1
 		}
 	}
 
-	QS := CreateQueueStatus(qu, n)
+	QS := &QueueStatus{Queue:qu,Queuenumber:n}
+	log.Println(QS.Queue[0])
 	msgs, err := json.Marshal(QS); if err != nil {log.Println(err.Error())}
+	log.Println(string(msgs))
 	fmt.Fprint(w, string(msgs))
 }
