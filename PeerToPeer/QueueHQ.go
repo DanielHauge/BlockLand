@@ -4,7 +4,36 @@ import (
 	"fmt"
 	"strings"
 	"log"
+	"bytes"
+	"encoding/json"
 )
+
+type QueueStatus struct {
+	queue []string `json:"queue"`
+	queuenumber int `json:"queuenumber"`
+}
+
+func DeserializeQueue(obj []byte) QueueStatus{
+	var qs QueueStatus
+	if err := json.Unmarshal(obj, &qs); err != nil {
+		log.Println(err.Error())
+	}
+	return qs
+}
+
+func (qs QueueStatus) Serialize() []byte {
+	var result bytes.Buffer
+	enc := json.NewEncoder(&result)
+	err := enc.Encode(qs)
+	if err != nil {log.Println("Something went wrong with encoding block to json byte array")}
+
+	return result.Bytes()
+}
+
+func CreateQueueStatus(queue []string, queuenumber int) (QS QueueStatus){
+	QS = QueueStatus{queue:queue, queuenumber:queuenumber}
+	return
+}
 
 
 func ConstructQueue() []string{

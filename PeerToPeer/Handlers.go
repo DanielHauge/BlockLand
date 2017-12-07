@@ -142,5 +142,14 @@ func GetQueue(w http.ResponseWriter, r *http.Request){
 }
 
 func GetSimulationData(w http.ResponseWriter, r *http.Request){
+	qu := ConstructQueue()
+	var n int
+	for i, u := range qu{
+		if u == Name{
+			n = i+1
+		}
+	}
 
+	QS := CreateQueueStatus(qu, n)
+	w.Write(QS.Serialize())
 }
