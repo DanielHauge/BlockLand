@@ -54,13 +54,15 @@ func ConstructQueue() []string{
 		if strings.ContainsAny(a, ":"){
 			stringSet := strings.Split(a, ":")
 			if stringSet[1] == "join"{
-
+				log.Println("It was a join!")
 				for _, b := range result{
 					if !IsUserAllreadyInQueue(result, b) {
+						log.Println("The user didn't exist therefor adding")
 						result = append(result, stringSet[0])
-					}
+					}else {log.Println("User did exist therefor will not add")}
 				}
 				} else if stringSet[1] == "leave"{
+					log.Println("it was a leave")
 				result = LeaveQueue(result, a)
 			}
 
@@ -73,7 +75,7 @@ func ConstructQueue() []string{
 func IsUserAllreadyInQueue(array []string, user string) bool{
 	result := false
 	for _, b := range array{
-		if strings.Contains(b, user){
+		if b == user{
 			result = true
 		}
 	}

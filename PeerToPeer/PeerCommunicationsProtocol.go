@@ -34,6 +34,13 @@ func receive(conn net.Conn){
 
 		case "HEALTH":
 
+		case "ABORT":
+			if DiscussionInSession && DiscussionSpeaker == msg.Username{
+				AbourtDiscussion()
+			}
+
+
+
 		case "JOIN-PROPOSITION":
 			EvaluateProposition(Deserialize(msg.Block), msg.Username)
 

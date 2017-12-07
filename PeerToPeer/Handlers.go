@@ -22,7 +22,7 @@ func Join(w http.ResponseWriter, r *http.Request){
 
 	dis := createDiscussion(Name, Name+":join")
 	go StartDiscussion(dis)
-	fmt.Fprintf(w, "Data: %s\n", "Discussion Started")
+	fmt.Fprintf(w, "Data: %v\n", "Discussion Started", dis.Data)
 }
 
 
@@ -31,7 +31,7 @@ func UnJoin(w http.ResponseWriter, r *http.Request){
 
 	dis := createDiscussion(Name, Name+":leave")
 	go StartDiscussion(dis)
-	fmt.Fprintf(w, "Data: %s\n", "Discussion Started")
+	fmt.Fprintf(w, "Data: %v\n", "Discussion Started", dis.Data)
 }
 
 func Status(w http.ResponseWriter, r *http.Request){

@@ -138,7 +138,9 @@ func StartDiscussion(dis Discussion) {
 				PROPOSITIION HAS BEEN DENIED! -> Everyone needs to agree
 				Logic here to solve disagreement
 				 */
-
+				abort := createMessage("ABORT", Name, getMyIP(), "Everyone does not agree", Users, IPS)
+				abort.send_all()
+				AbourtDiscussion()
 
 				log.Println("UUUUH SOMETHING WENT WRONG!!!!!!, council members didn't agree. Disagreement: "+strconv.Itoa(CountCouncilMembersDecision()))
 
@@ -152,7 +154,9 @@ func StartDiscussion(dis Discussion) {
 			log.Println("Everyone didn't agree on participants, starting healthchecks on connections")
 
 
-
+			abort := createMessage("ABORT", Name, getMyIP(), "Everyone does not agree", Users, IPS)
+			abort.send_all()
+			AbourtDiscussion()
 
 
 
