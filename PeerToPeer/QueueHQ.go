@@ -95,9 +95,12 @@ func reverseArray(array []string) []string{
 }
 
 func LeaveQueue(array []string, user string) []string{
+	log.Println("I want to remove: "+user)
 	temp := []string{}
 	for i, u := range array{
+		log.Println("Found user: "+u)
 		if u != user{
+			log.Println("Was not the one")
 			temp = append(temp, array[i])
 		}else {log.Println("Uhh found user -> will not add to temp")}
 

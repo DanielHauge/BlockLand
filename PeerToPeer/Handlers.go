@@ -152,5 +152,6 @@ func GetSimulationData(w http.ResponseWriter, r *http.Request){
 	}
 
 	QS := CreateQueueStatus(qu, n)
+	log.Println("SIMULATOR QUEUNUMBER: "+strconv.Itoa(QS.queuenumber))
 	w.Write(QS.Serialize())
 }
