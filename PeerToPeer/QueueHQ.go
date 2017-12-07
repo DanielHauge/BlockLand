@@ -81,10 +81,13 @@ func IsUserAllreadyInQueue(array []string, user string) bool{
 }
 
 func reverseArray(array []string) []string{
-	if len(array) == 0{
-		return array
+	temp := []string{}
+
+	for i := len(array)-1; i >= 0; i-- {
+		temp = append(temp, array[i])
 	}
-	return append(reverseArray(array[1:]), array[0])
+
+	return temp
 }
 
 func LeaveQueue(array []string, user string) []string{
