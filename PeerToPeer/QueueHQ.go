@@ -23,6 +23,8 @@ func DeserializeQueue(obj []byte) QueueStatus{
 
 }
 
+
+
 func (qs QueueStatus) Serialize() []byte {
 	var result bytes.Buffer
 	enc := json.NewEncoder(&result)

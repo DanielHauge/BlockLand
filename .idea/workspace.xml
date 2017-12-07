@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="278a682c-7a8e-4e8d-9e2b-8dd8587c1c3a" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/PeerToPeer/Handlers.go" afterPath="$PROJECT_DIR$/PeerToPeer/Handlers.go" />
       <change beforePath="$PROJECT_DIR$/PeerToPeer/QueueHQ.go" afterPath="$PROJECT_DIR$/PeerToPeer/QueueHQ.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Handlers.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Handlers.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PeerToPeer/Handlers.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="981">
-              <caret line="147" column="25" lean-forward="false" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
+            <state relative-caret-position="1122">
+              <caret line="156" column="31" lean-forward="false" selection-start-line="156" selection-start-column="31" selection-end-line="156" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -53,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QueueHQ.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="QueueHQ.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PeerToPeer/QueueHQ.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="519">
-              <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+            <state relative-caret-position="323">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -126,8 +127,8 @@
         <option value="$PROJECT_DIR$/PeerToPeer/Routes.go" />
         <option value="$PROJECT_DIR$/PeerToPeer/PeerCommunicationsProtocol.go" />
         <option value="$PROJECT_DIR$/PeerToPeer/Council.go" />
-        <option value="$PROJECT_DIR$/PeerToPeer/Handlers.go" />
         <option value="$PROJECT_DIR$/PeerToPeer/QueueHQ.go" />
+        <option value="$PROJECT_DIR$/PeerToPeer/Handlers.go" />
       </list>
     </option>
   </component>
@@ -304,14 +305,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PeerToPeer/Handlers.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="981">
-          <caret line="147" column="25" lean-forward="false" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PeerToPeer/PeerCommunicationsProtocol.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -322,8 +315,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PeerToPeer/QueueHQ.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+        <state relative-caret-position="323">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PeerToPeer/Handlers.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="156" column="31" lean-forward="false" selection-start-line="156" selection-start-column="31" selection-end-line="156" selection-end-column="31" />
           <folding />
         </state>
       </provider>

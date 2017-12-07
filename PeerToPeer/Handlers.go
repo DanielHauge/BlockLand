@@ -8,6 +8,7 @@ import (
  	"github.com/shurcooL/github_flavored_markdown"
 	"bytes"
 	"gopkg.in/russross/blackfriday.v2"
+	"encoding/json"
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {
@@ -152,6 +153,6 @@ func GetSimulationData(w http.ResponseWriter, r *http.Request){
 	}
 
 	QS := CreateQueueStatus(qu, n)
-	log.Println("SIMULATOR QUEUNUMBER: "+strconv.Itoa(QS.queuenumber))
-	w.Write(QS.Serialize())
+	msgs, err := json.Marshal(QS); if err != nil {log.Println(err.Error())}
+	fmt.Fprint(w, string(msgs))
 }
