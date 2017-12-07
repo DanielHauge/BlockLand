@@ -21,6 +21,7 @@ func Index(w http.ResponseWriter, r *http.Request) {
 
 func Join(w http.ResponseWriter, r *http.Request){
 
+
 	dis := createDiscussion(Name, Name+":join")
 	go StartDiscussion(dis)
 	fmt.Fprintf(w, "Data: %v\n", "Discussion Started", dis.Data)

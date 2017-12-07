@@ -49,6 +49,21 @@ func StartDiscussion(dis Discussion) {
 
 	} else {
 
+		if dis.Data==Name+":join"&&InQueue(){
+			log.Println("Ouj! cannot join if allready in queue!")
+			abort := createMessage("ABORT", Name, getMyIP(), "Ups, was allready in queue, cannot join.", make([]string, 0), make([]string, 0))
+			abort.send_all()
+			AbourtDiscussion()
+			return
+		}
+		if dis.Data==Name+":leave"&&!InQueue(){
+			log.Println("Ouj! cannot leave if not in queue!")
+			abort := createMessage("ABORT", Name, getMyIP(), "Ups, was not in queue, cannot leave.", make([]string, 0), make([]string, 0))
+			abort.send_all()
+			AbourtDiscussion()
+			return
+		}
+
 
 		/*
 		PARTICIPANTS CHECKING -> Speaker will count who is here and who is not here, any disagreement will result in a veto

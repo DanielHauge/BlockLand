@@ -109,3 +109,9 @@ func LeaveQueue(array []string, user string) []string{
 	}
 	return temp
 }
+
+func InQueue() bool{
+	qu := ConstructQueue()
+	return IsUserAllreadyInQueue(qu, Name)
+
+}
