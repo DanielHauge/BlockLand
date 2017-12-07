@@ -20,13 +20,15 @@ Proposition has been denied, you are allready in the queue**/
 func simulateJoinQueue(url string){
 	// TODO Make http request
 	// Make a get request
-	req, err := http.NewRequest("GET", url+"/join", nil)
+	rs, err := http.Get(url + "/join")
+
+
 	// Process response
 	if err != nil {
 		//panic(err) // More idiomatic way would be to print the error and die unless it's a serious error
 		fmt.Println(err);
 	}
-	defer req.Body.Close()
+	defer rs.Body.Close()
 }
 /**
 Status
@@ -47,13 +49,16 @@ or
 Proposition has been denied, you are not in the queue **/
 func simulateRemoveFromQueue(url string){
 	// TODO Make http request
-	req, err := http.NewRequest("DELETE", url+"/join", nil)
+	rs, err := http.Get(url + "/leave")
+
+
 	// Process response
 	if err != nil {
 		//panic(err) // More idiomatic way would be to print the error and die unless it's a serious error
 		fmt.Println(err);
 	}
-	defer req.Body.Close()
+	defer rs.Body.Close()
+
 
 }
 /**
@@ -86,7 +91,7 @@ Get Chain
 This call will iterate the whole chain and post this
 Route: /chain
 Method type: GET**/
-func simulateMoveOut(url srting) string{
+func simulateMoveOut(url string) string{
 	// TODO Make http request
 /*	// Make a get request
 	rs, err := http.Get(url + "/moveout")
@@ -112,7 +117,10 @@ func simulateCheckStatusInQueue(url string) QueueStatus{
 	// TODO Make http request
 	// TODO Make http request
 	// Make a get request
-	rs, err := http.Get(url + "/status")
+
+	rs, err := http.Get(url + "/sim")
+
+
 	// Process response
 	if err != nil {
 		//panic(err) // More idiomatic way would be to print the error and die unless it's a serious error
@@ -133,22 +141,4 @@ func simulateCheckStatusInQueue(url string) QueueStatus{
 
 }
 
-func HandShakeWithNode(url string) Simulation{
-	rs, err := http.Get(url + "/status")
-	// Process response
-	if err != nil {
-		//panic(err) // More idiomatic way would be to print the error and die unless it's a serious error
-		fmt.Println(err);
-	}
-	defer rs.Body.Close()
 
-	bodyBytes, err := ioutil.ReadAll(rs.Body)
-	if err != nil {
-		panic(err)
-	}
-
-	var sim Simulation
-	enc := json.NewDecoder(bytes.NewReader(bodyBytes))
-	enc.Decode(&sim)
-	return sim
-}

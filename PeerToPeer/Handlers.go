@@ -146,7 +146,7 @@ func GetQueue(w http.ResponseWriter, r *http.Request){
 
 func GetSimulationData(w http.ResponseWriter, r *http.Request){
 	qu := ConstructQueue()
-	var n int
+	n := 0
 	log.Println(len(qu))
 	for i, u := range qu{
 		log.Println(u)
