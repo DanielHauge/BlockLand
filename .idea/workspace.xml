@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="278a682c-7a8e-4e8d-9e2b-8dd8587c1c3a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/PeerToPeer/Prom.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/PeerToPeer/prometheus.yml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/PeerToPeer/Council.go" afterPath="$PROJECT_DIR$/PeerToPeer/Council.go" />
-      <change beforePath="$PROJECT_DIR$/PeerToPeer/Handlers.go" afterPath="$PROJECT_DIR$/PeerToPeer/Handlers.go" />
-      <change beforePath="$PROJECT_DIR$/PeerToPeer/Messages.go" afterPath="$PROJECT_DIR$/PeerToPeer/Messages.go" />
-      <change beforePath="$PROJECT_DIR$/PeerToPeer/PeerCommunicationsProtocol.go" afterPath="$PROJECT_DIR$/PeerToPeer/PeerCommunicationsProtocol.go" />
-      <change beforePath="$PROJECT_DIR$/PeerToPeer/Routes.go" afterPath="$PROJECT_DIR$/PeerToPeer/Routes.go" />
-      <change beforePath="$PROJECT_DIR$/PeerToPeer/docker-compose.yml" afterPath="$PROJECT_DIR$/PeerToPeer/docker-compose.yml" />
-      <change beforePath="$PROJECT_DIR$/Simulator/Simulator.go" afterPath="$PROJECT_DIR$/Simulator/Simulator.go" />
+      <change beforePath="$PROJECT_DIR$/PeerToPeer/Dockerfile" afterPath="$PROJECT_DIR$/PeerToPeer/Dockerfile" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,7 +13,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Prom.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Prom.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PeerToPeer/Prom.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="555">
@@ -30,6 +21,16 @@
               <folding>
                 <element signature="e#14#145#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PeerToPeer/Dockerfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -64,16 +65,6 @@
               <folding>
                 <element signature="e#14#69#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Messages.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PeerToPeer/Messages.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -146,7 +137,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/PeerToPeer/Dockerfile" />
         <option value="$PROJECT_DIR$/Simulator/main.go" />
         <option value="$PROJECT_DIR$/Simulator/SimulatorAction.go" />
         <option value="$PROJECT_DIR$/Simulator/Main.go" />
@@ -163,6 +153,7 @@
         <option value="$PROJECT_DIR$/PeerToPeer/docker-compose.yml" />
         <option value="$PROJECT_DIR$/PeerToPeer/prometheus.yml" />
         <option value="$PROJECT_DIR$/PeerToPeer/Routes.go" />
+        <option value="$PROJECT_DIR$/PeerToPeer/Dockerfile" />
       </list>
     </option>
   </component>
@@ -396,13 +387,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PeerToPeer/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Simulator/SimulatorAction.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-34">
@@ -422,7 +406,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#14#63#0" expanded="true" />
+            <element signature="e#14#63#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -588,6 +572,14 @@
           <folding>
             <element signature="e#14#145#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PeerToPeer/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
