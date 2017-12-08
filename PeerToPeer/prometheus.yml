@@ -25,29 +25,29 @@ scrape_configs:
   - job_name: 'Node2'
     scrape_interval: 5s
     static_configs:
-       - targets: ['Node2:8081']
+       - targets: ['Node2:8080']
 
   - job_name: 'Node3'
     scrape_interval: 5s
     static_configs:
-       - targets: ['Node3:8082']
+       - targets: ['Node3:8080']
 
   - job_name: 'Node4'
     scrape_interval: 5s
     static_configs:
-       - targets: ['Node4:8083']
+       - targets: ['Node4:8080']
 
   - job_name: 'Node5'
     scrape_interval: 5s
     static_configs:
-       - targets: ['Node5:8084']
+       - targets: ['Node5:8080']
 
   - job_name: 'Node6'
     scrape_interval: 5s
     static_configs:
-       - targets: ['Node6:8085']
+       - targets: ['Node6:8080']
 
   - job_name: 'Node7'
     scrape_interval: 5s
     static_configs:
-       - targets: ['Node7:8086']
+       - targets: ['Node7:8080']
