@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"os"
 	"sync"
-	"time"
+
 )
 
 // Args= 1: host, 2: Username, 3: Port
@@ -36,7 +36,7 @@ func main() {
 			wg.Done()
 	}
 
-	
+
 
 
 	log.Println("Initiazling API")

@@ -6,7 +6,6 @@ import (
 	"log"
 	"bytes"
 	"encoding/json"
-	log2 "github.com/prometheus/common/log"
 )
 
 type QueueStatus struct {

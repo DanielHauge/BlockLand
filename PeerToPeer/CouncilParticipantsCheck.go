@@ -2,7 +2,6 @@ package main
 
 import (
 	"log"
-	log2 "github.com/prometheus/common/log"
 )
 
 func ShareMyFellowPeeps(speaker string, speakersUsernames []string, speakerport string){
