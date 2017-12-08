@@ -6,6 +6,7 @@ import (
 	"log"
 	"bytes"
 	"encoding/json"
+	log2 "github.com/prometheus/common/log"
 )
 
 type QueueStatus struct {
@@ -62,16 +63,16 @@ func ConstructQueue() []string{
 			if strings.ContainsAny(a, ":") {
 				stringSet := strings.Split(a, ":")
 				if stringSet[1] == "join" {
-					log.Println("It was a join!")
+					if debugging{log.Println("It was a join!")}
 					if !IsUserAllreadyInQueue(result, a) {
-						log.Println("The user didn't exist therefor adding")
+						if debugging{log.Println("The user didn't exist therefor adding")}
 						result = append(result, stringSet[0])
 					} else {
-						log.Println("User did exist therefor will not add")
+						if debugging{log.Println("User did exist therefor will not add")}
 					}
 
 				} else if stringSet[1] == "leave" {
-					log.Println("it was a leave")
+					if debugging{log.Println("it was a leave") }
 					result = LeaveQueue(result, stringSet[0])
 				}
 
@@ -105,14 +106,14 @@ func reverseArray(array []string) []string{
 }
 
 func LeaveQueue(array []string, user string) []string{
-	log.Println("I want to remove: "+user)
+	if debugging{log.Println("I want to remove: "+user)}
 	temp := []string{}
 	for i, u := range array{
-		log.Println("Found user: "+u)
+		if debugging{log.Println("Found user: "+u)}
 		if u != user{
-			log.Println("Was not the one")
+			if debugging{log.Println("Was not the one")}
 			temp = append(temp, array[i])
-		}else {log.Println("Uhh found user -> will not add to temp")}
+		}else {if debugging{log.Println("Uhh found user -> will not add to temp")}}
 
 	}
 	return temp

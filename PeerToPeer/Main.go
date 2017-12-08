@@ -11,6 +11,7 @@ import (
 // Args= 1: host, 2: Username, 3: Port
 var chainrequest = false
 var initialized = false
+var debugging = false
 
 var wg sync.WaitGroup
 
@@ -35,8 +36,7 @@ func main() {
 			wg.Done()
 	}
 
-
-	go DiscussionUnstucker()
+	
 
 
 	log.Println("Initiazling API")
@@ -48,24 +48,3 @@ func main() {
 
 }
 
-func DiscussionUnstucker(){
-	for {
-		VotingTime := make(chan bool)
-
-		ticker := time.NewTicker(60 * time.Second)
-		go func(ticker *time.Ticker) {
-			for {
-				select {
-				case <-ticker.C:
-					VotingTime <- true
-
-				}
-			}
-		}(ticker)
-
-		<-VotingTime
-		if len(DiscussionQueue)>0{
-			StartDiscussion(<-DiscussionQueue)
-		}
-	}
-}

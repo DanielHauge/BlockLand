@@ -1,6 +1,9 @@
 package main
 
-import "log"
+import (
+	"log"
+	log2 "github.com/prometheus/common/log"
+)
 
 func ShareMyFellowPeeps(speaker string, speakersUsernames []string, speakerport string){
 
@@ -26,11 +29,11 @@ func CrossCheckList(list1 []string, list2 []string) bool{
 
 		if !DoesUserExist(b, list2){
 			result = false
-			log.Println("User didn't exist!: "+b)
+			if debugging{log.Println("User didn't exist!: "+b)}
 
 			if b == Name || b == DiscussionSpeaker{
 				result = true
-				log.Println("Ohh it was Speaker or Me")
+				if debugging{log.Println("Ohh it was Speaker or Me")}
 			}
 		}
 	}
@@ -46,7 +49,7 @@ func DoesUserExist(name string, strings []string) bool {
 			result = true
 
 		}
-		log.Println(b)
+		if debugging{log.Println(b)}
 	}
 
 
@@ -55,10 +58,10 @@ func DoesUserExist(name string, strings []string) bool {
 
 func HeadCount(who string, answer string, users []string){
 	if answer == "Yes" {
-		log.Println("HeadCount Status: Yes!")
+		if debugging{log.Println("HeadCount Status: Yes!")}
 		Users, _ := getFromMap(PeerIPs)
 		if CrossCheckList(users, Users){
-			log.Println("Yes CrossCheck was correct")
+			if debugging{log.Println("Yes CrossCheck was correct")}
 			DiscussionAgreement[who] = true
 			DiscussionParticipants = append(DiscussionParticipants, who)
 		} else {
