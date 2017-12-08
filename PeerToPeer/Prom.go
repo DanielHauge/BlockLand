@@ -21,15 +21,15 @@ var (
 		},
 	)
 
-	InboundTCP = prometheus.NewCounter(
-		prometheus.CounterOpts{
+	InboundTCP = prometheus.NewGauge(
+		prometheus.GaugeOpts{
 			Name: "tcp_inbound",
 			Help: "The ammount of inbound TCP.",
 		},
 	)
 
-	OutboundTCP = prometheus.NewCounter(
-		prometheus.CounterOpts{
+	OutboundTCP = prometheus.NewGauge(
+		prometheus.GaugeOpts{
 			Name: "tcp_outbound",
 			Help: "The ammount of inbound TCP.",
 		},
@@ -42,22 +42,22 @@ var (
 		},
 	)
 
-	ENDOutboundTCP = prometheus.NewCounter(
-		prometheus.CounterOpts{
+	ENDOutboundTCP = prometheus.NewGauge(
+		prometheus.GaugeOpts{
 			Name: "tcp_outbound_END",
 			Help: "The ammount of ends.",
 		},
 	)
 
-	ABORTOutboundTCP = prometheus.NewCounter(
-		prometheus.CounterOpts{
+	ABORTOutboundTCP = prometheus.NewGauge(
+		prometheus.GaugeOpts{
 			Name: "tcp_outbound_ABORT",
 			Help: "failed aborts.",
 		},
 	)
 
-	INVOutboundTCP = prometheus.NewCounter(
-		prometheus.CounterOpts{
+	INVOutboundTCP = prometheus.NewGauge(
+		prometheus.GaugeOpts{
 			Name: "tcp_outbound_INV",
 			Help: "The ammount of invites.",
 		},
@@ -67,6 +67,13 @@ var (
 		prometheus.GaugeOpts{
 			Name: "join_or_leave",
 			Help: "a proposition has been made by this node!",
+		},
+	)
+
+	QueueSize = prometheus.NewGauge(
+		prometheus.GaugeOpts{
+			Name: "queue_size",
+			Help: "how many discussions are in queue!!",
 		},
 	)
 
@@ -90,7 +97,14 @@ func init(){
 
 
 func ServceMetrics (w http.ResponseWriter, r *http.Request){
+
 	PromDiscussionParticipants.Set(float64(len(DiscussionParticipants)))
+	QueueSize.Set(float64(len(DiscussionQueue)))
 	promhttp.Handler().ServeHTTP(w, r)
 	JoinsOrLeaves.Set(0)
+	INVOutboundTCP.Set(0)
+	ABORTOutboundTCP.Set(0)
+	ENDOutboundTCP.Set(0)
+	InboundTCP.Set(0)
+	OutboundTCP.Set(0)
 }
