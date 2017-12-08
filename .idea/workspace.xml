@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="278a682c-7a8e-4e8d-9e2b-8dd8587c1c3a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/PeerToPeer/prometheus.yml" afterPath="$PROJECT_DIR$/PeerToPeer/prometheus.yml" />
+      <change beforePath="$PROJECT_DIR$/PeerToPeer/Prom.go" afterPath="$PROJECT_DIR$/PeerToPeer/Prom.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Prom.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Prom.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PeerToPeer/Prom.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1037">
-              <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+            <state relative-caret-position="402">
+              <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
               <folding>
                 <element signature="e#14#145#0" expanded="true" />
               </folding>
@@ -99,11 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="prometheus.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="prometheus.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PeerToPeer/prometheus.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="776">
-              <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+            <state relative-caret-position="612">
+              <caret line="36" column="19" lean-forward="true" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -148,12 +148,12 @@
         <option value="$PROJECT_DIR$/PeerToPeer/Messages.go" />
         <option value="$PROJECT_DIR$/PeerToPeer/Council.go" />
         <option value="$PROJECT_DIR$/PeerToPeer/PeerCommunicationsProtocol.go" />
-        <option value="$PROJECT_DIR$/PeerToPeer/Prom.go" />
         <option value="$PROJECT_DIR$/PeerToPeer/Handlers.go" />
         <option value="$PROJECT_DIR$/PeerToPeer/docker-compose.yml" />
         <option value="$PROJECT_DIR$/PeerToPeer/Routes.go" />
         <option value="$PROJECT_DIR$/PeerToPeer/Dockerfile" />
         <option value="$PROJECT_DIR$/PeerToPeer/prometheus.yml" />
+        <option value="$PROJECT_DIR$/PeerToPeer/Prom.go" />
       </list>
     </option>
   </component>
@@ -565,21 +565,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PeerToPeer/Prom.go">
+    <entry file="file://$PROJECT_DIR$/PeerToPeer/prometheus.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding>
-            <element signature="e#14#145#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="612">
+          <caret line="36" column="19" lean-forward="true" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PeerToPeer/prometheus.yml">
+    <entry file="file://$PROJECT_DIR$/PeerToPeer/Prom.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="776">
-          <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="402">
+          <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding>
+            <element signature="e#14#145#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

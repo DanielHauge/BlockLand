@@ -68,6 +68,18 @@ var (
 
 )
 
+func init(){
+	prometheus.MustRegister(INVOutboundTCP)
+	prometheus.MustRegister(ABORTOutboundTCP)
+	prometheus.MustRegister(ENDOutboundTCP)
+	prometheus.MustRegister(PromDiscussionParticipants)
+	prometheus.MustRegister(OutboundTCP)
+	prometheus.MustRegister(InboundTCP)
+	prometheus.MustRegister(PromSpeaker)
+	prometheus.MustRegister(PromInSession)
+
+}
+
 
 func ServceMetrics (w http.ResponseWriter, r *http.Request){
 	promhttp.Handler().ServeHTTP(w, r)
