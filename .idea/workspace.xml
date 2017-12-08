@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="278a682c-7a8e-4e8d-9e2b-8dd8587c1c3a" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/PeerToPeer/Prom.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/PeerToPeer/prometheus.yml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/PeerToPeer/Council.go" afterPath="$PROJECT_DIR$/PeerToPeer/Council.go" />
+      <change beforePath="$PROJECT_DIR$/PeerToPeer/Handlers.go" afterPath="$PROJECT_DIR$/PeerToPeer/Handlers.go" />
+      <change beforePath="$PROJECT_DIR$/PeerToPeer/Messages.go" afterPath="$PROJECT_DIR$/PeerToPeer/Messages.go" />
       <change beforePath="$PROJECT_DIR$/PeerToPeer/PeerCommunicationsProtocol.go" afterPath="$PROJECT_DIR$/PeerToPeer/PeerCommunicationsProtocol.go" />
+      <change beforePath="$PROJECT_DIR$/PeerToPeer/Routes.go" afterPath="$PROJECT_DIR$/PeerToPeer/Routes.go" />
+      <change beforePath="$PROJECT_DIR$/PeerToPeer/docker-compose.yml" afterPath="$PROJECT_DIR$/PeerToPeer/docker-compose.yml" />
+      <change beforePath="$PROJECT_DIR$/Simulator/Simulator.go" afterPath="$PROJECT_DIR$/Simulator/Simulator.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,46 +21,34 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="MinersGuild.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PeerToPeer/MinersGuild.go">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Prom.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PeerToPeer/Prom.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="555">
+              <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
               <folding>
-                <element signature="e#14#84#0" expanded="true" />
+                <element signature="e#14#145#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PeerCommunicationsProtocol.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PeerToPeer/PeerCommunicationsProtocol.go">
+      <file leaf-file-name="QueueHQ.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PeerToPeer/QueueHQ.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-              <folding>
-                <element signature="e#14#55#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PeerToPeer/Main.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="-873">
+              <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Council.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Council.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PeerToPeer/Council.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="92" column="20" lean-forward="true" selection-start-line="92" selection-start-column="20" selection-end-line="92" selection-end-column="20" />
+            <state relative-caret-position="1241">
+              <caret line="181" column="0" lean-forward="true" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
               <folding>
                 <element signature="e#14#82#0" expanded="true" />
               </folding>
@@ -63,8 +59,8 @@
       <file leaf-file-name="PeersControlCenter.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PeerToPeer/PeersControlCenter.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2464">
-              <caret line="145" column="0" lean-forward="true" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+            <state relative-caret-position="374">
+              <caret line="37" column="22" lean-forward="false" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
               <folding>
                 <element signature="e#14#69#0" expanded="true" />
               </folding>
@@ -72,43 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QueueHQ.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PeerToPeer/QueueHQ.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Router.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PeerToPeer/Router.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#14#63#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Routes.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PeerToPeer/Routes.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Messages.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PeerToPeer/Messages.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="31" column="31" lean-forward="true" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+            <state relative-caret-position="504">
+              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -117,16 +81,63 @@
       <file leaf-file-name="Handlers.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PeerToPeer/Handlers.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="148" column="10" lean-forward="true" selection-start-line="148" selection-start-column="10" selection-end-line="148" selection-end-column="10" />
+            <state relative-caret-position="677">
+              <caret line="167" column="1" lean-forward="true" selection-start-line="167" selection-start-column="1" selection-end-line="167" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Routes.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PeerToPeer/Routes.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1241">
+              <caret line="73" column="10" lean-forward="true" selection-start-line="73" selection-start-column="10" selection-end-line="73" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="docker-compose.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PeerToPeer/docker-compose.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="640">
+              <caret line="72" column="34" lean-forward="false" selection-start-line="72" selection-start-column="34" selection-end-line="72" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="prometheus.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PeerToPeer/prometheus.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="19" lean-forward="true" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PeerCommunicationsProtocol.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PeerToPeer/PeerCommunicationsProtocol.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="69" column="32" lean-forward="false" selection-start-line="69" selection-start-column="32" selection-end-line="69" selection-end-column="32" />
               <folding>
-                <element signature="e#14#172#0" expanded="true" />
+                <element signature="e#14#55#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
   </component>
   <component name="GOROOT" path="C:\Go" />
   <component name="Git.Settings">
@@ -136,18 +147,22 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/PeerToPeer/Dockerfile" />
-        <option value="$PROJECT_DIR$/PeerToPeer/Routes.go" />
         <option value="$PROJECT_DIR$/Simulator/main.go" />
         <option value="$PROJECT_DIR$/Simulator/SimulatorAction.go" />
-        <option value="$PROJECT_DIR$/PeerToPeer/Handlers.go" />
-        <option value="$PROJECT_DIR$/Simulator/Simulator.go" />
         <option value="$PROJECT_DIR$/Simulator/Main.go" />
         <option value="$PROJECT_DIR$/PeerToPeer/CouncilPropositionProtocol.go" />
         <option value="$PROJECT_DIR$/PeerToPeer/Main.go" />
         <option value="$PROJECT_DIR$/PeerToPeer/CouncilParticipantsCheck.go" />
         <option value="$PROJECT_DIR$/PeerToPeer/QueueHQ.go" />
-        <option value="$PROJECT_DIR$/PeerToPeer/PeerCommunicationsProtocol.go" />
+        <option value="$PROJECT_DIR$/Simulator/Simulator.go" />
+        <option value="$PROJECT_DIR$/PeerToPeer/Messages.go" />
         <option value="$PROJECT_DIR$/PeerToPeer/Council.go" />
+        <option value="$PROJECT_DIR$/PeerToPeer/PeerCommunicationsProtocol.go" />
+        <option value="$PROJECT_DIR$/PeerToPeer/Prom.go" />
+        <option value="$PROJECT_DIR$/PeerToPeer/Handlers.go" />
+        <option value="$PROJECT_DIR$/PeerToPeer/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/PeerToPeer/prometheus.yml" />
+        <option value="$PROJECT_DIR$/PeerToPeer/Routes.go" />
       </list>
     </option>
   </component>
@@ -199,13 +214,14 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HackerNews-Grp8/Production/GoAPI" />
+    <property name="DefaultGoTemplateProperty" value="Go File" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -255,23 +271,23 @@
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.186407" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10810811" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32943925" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -288,11 +304,102 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/PeerToPeer/PeerCommunicationsProtocol.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+          <folding>
+            <element signature="e#14#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PeerToPeer/Main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="e#14#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PeerToPeer/Council.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1921">
+          <caret line="119" column="54" lean-forward="false" selection-start-line="119" selection-start-column="54" selection-end-line="119" selection-end-column="54" />
+          <folding>
+            <element signature="e#14#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PeerToPeer/MinersGuild.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+          <folding>
+            <element signature="e#14#84#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Simulator/Simulator.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2006">
+          <caret line="123" column="27" lean-forward="false" selection-start-line="123" selection-start-column="27" selection-end-line="123" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Simulator/Main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="40" column="27" lean-forward="false" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PeerToPeer/PeersControlCenter.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="37" column="22" lean-forward="false" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+          <folding>
+            <element signature="e#14#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PeerToPeer/Routes.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PeerToPeer/Handlers.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2363">
+          <caret line="148" column="10" lean-forward="true" selection-start-line="148" selection-start-column="10" selection-end-line="148" selection-end-column="10" />
+          <folding>
+            <element signature="e#14#172#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PeerToPeer/Messages.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="32" column="40" lean-forward="true" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PeerToPeer/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -300,29 +407,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-34">
           <caret line="19" column="35" lean-forward="true" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-          <folding>
-            <element signature="e#14#82#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Simulator/Simulator.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="109" column="13" lean-forward="true" selection-start-line="109" selection-start-column="13" selection-end-line="109" selection-end-column="13" />
-          <folding>
-            <element signature="e#14#63#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Simulator/Main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" column="27" lean-forward="false" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
-          <folding>
-            <element signature="e#14#63#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -330,27 +414,72 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PeerToPeer/Router.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#14#48#0" expanded="true" />
+            <element signature="e#14#63#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PeerToPeer/CouncilPropositionProtocol.go">
+    <entry file="file://$PROJECT_DIR$/Simulator/Main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="595">
+          <caret line="40" column="27" lean-forward="false" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Simulator/Simulator.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2006">
+          <caret line="123" column="27" lean-forward="false" selection-start-line="123" selection-start-column="27" selection-end-line="123" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PeerToPeer/MinersGuild.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
           <folding>
-            <element signature="e#14#66#0" expanded="true" />
+            <element signature="e#14#84#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PeerToPeer/Main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#14#58#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PeerToPeer/CouncilParticipantsCheck.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="-431">
+          <caret line="8" column="37" lean-forward="false" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <folding>
+            <element signature="e#14#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PeerToPeer/CouncilPropositionProtocol.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <element signature="e#14#66#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -366,7 +495,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PeerToPeer/BlockChainHQ.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-3253">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#14#83#0" expanded="true" />
@@ -374,94 +503,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PeerToPeer/MinersGuild.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#14#84#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PeerToPeer/QueueHQ.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PeerToPeer/Router.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#14#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PeerToPeer/Routes.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PeerToPeer/Messages.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="31" column="31" lean-forward="true" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+        <state relative-caret-position="504">
+          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PeerToPeer/Handlers.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="148" column="10" lean-forward="true" selection-start-line="148" selection-start-column="10" selection-end-line="148" selection-end-column="10" />
-          <folding>
-            <element signature="e#14#172#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PeerToPeer/PeersControlCenter.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2464">
-          <caret line="145" column="0" lean-forward="true" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+        <state relative-caret-position="374">
+          <caret line="37" column="22" lean-forward="false" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
           <folding>
             <element signature="e#14#69#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/PeerToPeer/Council.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="181" column="0" lean-forward="true" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
+          <folding>
+            <element signature="e#14#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PeerToPeer/PeerCommunicationsProtocol.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+        <state relative-caret-position="368">
+          <caret line="69" column="32" lean-forward="false" selection-start-line="69" selection-start-column="32" selection-end-line="69" selection-end-column="32" />
           <folding>
             <element signature="e#14#55#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PeerToPeer/Main.go">
+    <entry file="file://$PROJECT_DIR$/PeerToPeer/QueueHQ.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="-873">
+          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PeerToPeer/Council.go">
+    <entry file="file://$PROJECT_DIR$/PeerToPeer/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="92" column="20" lean-forward="true" selection-start-line="92" selection-start-column="20" selection-end-line="92" selection-end-column="20" />
+        <state relative-caret-position="640">
+          <caret line="72" column="34" lean-forward="false" selection-start-line="72" selection-start-column="34" selection-end-line="72" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PeerToPeer/Handlers.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="677">
+          <caret line="167" column="1" lean-forward="true" selection-start-line="167" selection-start-column="1" selection-end-line="167" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PeerToPeer/Routes.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="73" column="10" lean-forward="true" selection-start-line="73" selection-start-column="10" selection-end-line="73" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PeerToPeer/prometheus.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="19" lean-forward="true" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PeerToPeer/Prom.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding>
-            <element signature="e#14#82#0" expanded="true" />
+            <element signature="e#14#145#0" expanded="true" />
           </folding>
         </state>
       </provider>

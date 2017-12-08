@@ -121,7 +121,7 @@ func startSimulation(url string){
 
 
 		rand.Seed(time.Now().UnixNano())
-		timeInt := random(10000,70000)
+		timeInt := random(50000,130000)
 		log.Println("Time to sleep! for "+strconv.Itoa(timeInt)+" Miliseconds! - Btw i'm: "+url)
 		time.Sleep(time.Duration(timeInt)*time.Millisecond)
 

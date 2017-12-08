@@ -129,9 +129,11 @@ func GetQueue(w http.ResponseWriter, r *http.Request){
 	buffer.WriteString("User: "+Name+"\n\n")
 	buffer.WriteString("| Queue Number | User |\n")
 	buffer.WriteString("|:------------:| ----:|\n")
-	log.Println(len(queue))
+	if debugging{ log.Println(len(queue))}
+
 	for i, u := range queue{
-		log.Println(strconv.Itoa(i)+" - "+u)
+		if debugging{ log.Println(strconv.Itoa(i)+" - "+u)}
+
 		buffer.WriteString("| "+strconv.Itoa(i+1)+" | "+u+" |\n")
 		if (u == Name){
 			mypos = "\n\n### You are at position: "+strconv.Itoa(i+1)+"\n\n"
@@ -147,17 +149,20 @@ func GetQueue(w http.ResponseWriter, r *http.Request){
 func GetSimulationData(w http.ResponseWriter, r *http.Request){
 	qu := ConstructQueue()
 	n := 0
-	log.Println(len(qu))
+	if debugging{log.Println(len(qu))}
 	for i, u := range qu{
-		log.Println(u)
+		if debugging{log.Println(u) }
+
 		if u == Name{
 			n = i+1
 		}
 	}
 
 	QS := &QueueStatus{Queue:qu,Queuenumber:n}
-	log.Println(QS.Queue[0])
+	if debugging{log.Println(QS.Queue[0]) }
+
 	msgs, err := json.Marshal(QS); if err != nil {log.Println(err.Error())}
-	log.Println(string(msgs))
+	if debugging{ log.Println(string(msgs))}
+
 	fmt.Fprint(w, string(msgs))
 }

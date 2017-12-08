@@ -59,6 +59,25 @@ services:
     entrypoint: ./go Node1 Anders :8086
     depends_on:
           - "Node1"
-       
+   Prom:
+    image: prom/prometheus
+    links:
+    - Node1
+    - Node2
+    - Node3
+    - Node4
+    - Node5
+    - Node6
+    - Node7
+    volumes:
+      - /root/BlockLand/PeerToPeer/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+   Grafana:
+    image: grafana/grafana:4.5.2
+    links:
+      - Prom
+    ports:
+      - "3000:3000"
 
     

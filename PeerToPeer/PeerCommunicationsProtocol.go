@@ -13,7 +13,7 @@ func receive(conn net.Conn){
 	dec := json.NewDecoder(conn)
 	msg := new(Message)
 
-
+	InboundTCP.Inc()
 
 	for {
 
@@ -31,14 +31,17 @@ func receive(conn net.Conn){
 
 		case "END":
 			EndDiscussion()
+			ENDOutboundTCP.Inc()
 
 		case "HEALTH":
 
 		case "ABORT":
 			if DiscussionInSession && DiscussionSpeaker == msg.Username{
 				AbourtDiscussion()
-			}
 
+			} else {
+				ABORTOutboundTCP.Inc()
+			}
 
 
 		case "JOIN-PROPOSITION":
@@ -64,6 +67,7 @@ func receive(conn net.Conn){
 
 		case "SESSION-PROPOSAL":
 			ShareMyFellowPeeps(msg.Username, msg.Usernames, msg.MSG)
+			INVOutboundTCP.Inc()
 
 		case "DISCUSSION-TO-QUEUE":
 			DiscussionQueue <- createDiscussion(msg.Username, msg.MSG)

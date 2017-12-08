@@ -65,14 +65,17 @@ func StartDiscussion(dis Discussion) {
 		}
 
 
+
 		/*
 		PARTICIPANTS CHECKING -> Speaker will count who is here and who is not here, any disagreement will result in a veto
 		 */
 		DiscussionSpeaker = dis.owner
+		if dis.owner == Name{PromSpeaker.Set(1)}
 		DiscussionTopic = "Participants Voting"
 		DiscussionAgreement = map[string]bool{}
 		DiscussionParticipants = []string{}
 		DiscussionInSession = true
+		PromInSession.Set(1)
 		Users, IPS := getFromMap(PeerIPs)
 		Proposal := createMessage("SESSION-PROPOSAL", Name, getMyIP(), os.Args[3], Users, IPS)
 		Proposal.send_all()
@@ -102,7 +105,7 @@ func StartDiscussion(dis Discussion) {
 			log.Println("Will start to mine and work and then send to others for approval")
 			DiscussionTopic = "Mining Block"
 			DiscussionAgreement = map[string]bool{}
-
+			PromDiscussionParticipants.Set(float64(len(DiscussionParticipants)))
 
 			var lastHash []byte
 
@@ -188,10 +191,13 @@ func EndDiscussion(){
 	BlockChain.AddKnownGoodBlock(DiscussionBlock)
 	DiscussionBlock = nil
 	DiscussionSpeaker = ""
+	PromSpeaker.Set(0)
 	DiscussionSpeakerPort = ""
 	DiscussionAgreement = map[string]bool{}
 	DiscussionParticipants = make([]string,0)
+	PromDiscussionParticipants.Set(float64(len(DiscussionParticipants)))
 	DiscussionInSession = false
+	PromInSession.Set(0)
 	if len(DiscussionQueue) > 0{
 		NewDiscussion := <-DiscussionQueue
 		if NewDiscussion.owner == Name{
@@ -204,10 +210,13 @@ func EndDiscussion(){
 func AbourtDiscussion(){
 	DiscussionBlock = nil
 	DiscussionSpeaker = ""
+	PromSpeaker.Set(0)
 	DiscussionSpeakerPort = ""
 	DiscussionAgreement = map[string]bool{}
 	DiscussionParticipants = make([]string,0)
+	PromDiscussionParticipants.Set(float64(len(DiscussionParticipants)))
 	DiscussionInSession = false
+	PromInSession.Set(0)
 	if len(DiscussionQueue) > 0{
 		NewDiscussion := <-DiscussionQueue
 		if NewDiscussion.owner == Name{

@@ -71,5 +71,11 @@ var routes = Routes{
 		"/sim",
 		GetSimulationData,
 	},
+	Route{
+		"Metrics",
+		"GET",
+		"/metrics",
+		ServceMetrics,
+	},
 
 }
