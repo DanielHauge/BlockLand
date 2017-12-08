@@ -19,7 +19,7 @@ func receive(conn net.Conn){
 
 		if err := dec.Decode(msg); err != nil { return }
 
-		if testing {log.Print("\nReceieved Message: \n Kind: "+msg.Kind+ "\n MSG: "+ msg.MSG+"\n Username: "+ msg.Username+"\n IP: "+ msg.IP+ "\n Number of Peers: ", len(msg.Usernames), "\n Number of Connections: ",len(msg.IPs), "\n\n")}
+		if testing {log.Print("\nReceieved Message: \n Kind: "+msg.Kind+ "    MSG: "+ msg.MSG+"    Username: "+ msg.Username+"    IP: "+ msg.IP+ "     Number of Peers: ", len(msg.Usernames), "     Number of Connections: ",len(msg.IPs), "\n\n")}
 
 		switch msg.Kind{
 

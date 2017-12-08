@@ -91,7 +91,7 @@ func StartDiscussion(dis Discussion) {
 		}(ticker)
 
 		<-VotingTime
-		if CountCouncilMembersDecision() == 0 {
+		if CountCouncilMembersDecision() == 0 /*&& len(DiscussionAgreement)==len(Connections) */{
 
 			/*
 			Council agreed upon participants and will now begin discussing
