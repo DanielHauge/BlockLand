@@ -67,6 +67,8 @@ func receive(conn net.Conn){
 
 		case "SESSION-PROPOSAL":
 			ShareMyFellowPeeps(msg.Username, msg.Usernames, msg.MSG)
+			DiscussionInSession = true
+			PromInSession.Set(1)
 			INVOutboundTCP.Inc()
 
 		case "DISCUSSION-TO-QUEUE":

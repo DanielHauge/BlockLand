@@ -63,6 +63,13 @@ var (
 		},
 	)
 
+	JoinsOrLeaves = prometheus.NewGauge(
+		prometheus.GaugeOpts{
+			Name: "join_or_leave",
+			Help: "a proposition has been made by this node!",
+		},
+	)
+
 
 
 
@@ -77,10 +84,13 @@ func init(){
 	prometheus.MustRegister(InboundTCP)
 	prometheus.MustRegister(PromSpeaker)
 	prometheus.MustRegister(PromInSession)
+	prometheus.MustRegister(JoinsOrLeaves)
 
 }
 
 
 func ServceMetrics (w http.ResponseWriter, r *http.Request){
+
 	promhttp.Handler().ServeHTTP(w, r)
+	JoinsOrLeaves.Set(0)
 }
