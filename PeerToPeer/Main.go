@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"os"
 	"sync"
+	"time"
 )
 
 // Args= 1: host, 2: Username, 3: Port
@@ -26,15 +27,16 @@ func main() {
 		chainrequest = true
 		go introduceMyself(os.Args[1]);
 		log.Println("Connecting to peers")
-		} else {
+	} else {
 			log.Println("I'm the first peer on the network, therefor will not introduce myself")
 			BlockChain = NewBlockChain()
 			log.Println("I'm finished! Mining first block")
 			initialized = true
 			wg.Done()
+	}
 
-		}
 
+	go DiscussionUnstucker()
 
 
 	log.Println("Initiazling API")
@@ -44,4 +46,26 @@ func main() {
 
 
 
+}
+
+func DiscussionUnstucker(){
+	for {
+		VotingTime := make(chan bool)
+
+		ticker := time.NewTicker(60 * time.Second)
+		go func(ticker *time.Ticker) {
+			for {
+				select {
+				case <-ticker.C:
+					VotingTime <- true
+
+				}
+			}
+		}(ticker)
+
+		<-VotingTime
+		if len(DiscussionQueue)>0{
+			StartDiscussion(<-DiscussionQueue)
+		}
+	}
 }

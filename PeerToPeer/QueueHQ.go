@@ -54,23 +54,31 @@ func ConstructQueue() []string{
 		}
 	}
 
+	if len(chain)<2{
+		result = append(result, "Nobody")
+	}else {
 
-	for _, a := range reverseArray(chain){
-		if strings.ContainsAny(a, ":"){
-			stringSet := strings.Split(a, ":")
-			if stringSet[1] == "join"{
-				log.Println("It was a join!")
+		for _, a := range reverseArray(chain) {
+			if strings.ContainsAny(a, ":") {
+				stringSet := strings.Split(a, ":")
+				if stringSet[1] == "join" {
+					log.Println("It was a join!")
 					if !IsUserAllreadyInQueue(result, a) {
 						log.Println("The user didn't exist therefor adding")
 						result = append(result, stringSet[0])
-					}else {log.Println("User did exist therefor will not add")}
+					} else {
+						log.Println("User did exist therefor will not add")
+					}
 
-				} else if stringSet[1] == "leave"{
+				} else if stringSet[1] == "leave" {
 					log.Println("it was a leave")
-				result = LeaveQueue(result, stringSet[0])
-			}
+					result = LeaveQueue(result, stringSet[0])
+				}
 
-		} else {log.Println("Do nothing, it was genesis block")}
+			} else {
+				log.Println("Do nothing, it was genesis block")
+			}
+		}
 	}
 
 	return result

@@ -38,14 +38,17 @@ func startSimulation(url string){
 	/*
 	Get request to node about initial information: Username, status
 	 */
-
+	inque := false
 	SimulationsStatus := simulateCheckStatusInQueue(url)
+	if SimulationsStatus.Queuenumber!=0{
+		inque = true
+	}
 
 	for {
 
 		SimulationsStatus = simulateCheckStatusInQueue(url)
 		time.Sleep(time.Duration(2)*time.Second)
-		if (SimulationsStatus.Queuenumber != 0){
+		if (SimulationsStatus.Queuenumber == 0&&!inque){
 			/*
 			WAS NOT IN QUEUE!
 			 */
@@ -54,6 +57,7 @@ func startSimulation(url string){
 				/*
 				50 % Chance to join queue
 				 */
+				 inque = true
 				simulateJoinQueue(url)
 				log.Println("I decided to join queue")
 
@@ -66,7 +70,7 @@ func startSimulation(url string){
 
 			}
 
-		} else {
+		} else if SimulationsStatus.Queuenumber != 0 &&inque{
 			/*
 			WAS IN QUEUE
 			 */
@@ -81,6 +85,7 @@ func startSimulation(url string){
 					25 % Chance to Unjoin queuue
 					 */
 					simulateRemoveFromQueue(url)
+					inque = false
 					log.Println("OOOOOOHHH i decided to remove myself from the queue!")
 
 				}else {
@@ -105,6 +110,10 @@ func startSimulation(url string){
 			}
 
 
+		} else {
+			log.Println("oohh what happens?")
+			log.Println(inque)
+			log.Println(SimulationsStatus.Queuenumber)
 		}
 
 
@@ -112,7 +121,7 @@ func startSimulation(url string){
 
 
 		rand.Seed(time.Now().UnixNano())
-		timeInt := random(10000,30000)
+		timeInt := random(10000,70000)
 		log.Println("Time to sleep! for "+strconv.Itoa(timeInt)+" Miliseconds! - Btw i'm: "+url)
 		time.Sleep(time.Duration(timeInt)*time.Millisecond)
 
