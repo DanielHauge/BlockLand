@@ -16,6 +16,7 @@ Blockchain project
 - Mining speed will not matter for our council style = Structured fairness.
 - When does it stop working, how many blocks can be sent over TCP
 - UML diagram: Sequence + component diagram.
+- Flaw: If something occurs at the exact same time, the business logic becomes very heavy, they will need to agree upon who came first and stuff.
 
 ## Wishfull thinking
 - Docker swarm
