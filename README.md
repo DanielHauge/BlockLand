@@ -3,9 +3,9 @@ Blockchain project
 
 
 ##### Task
-- Simulator
-- Peer to peer program
-- RAD document
+- Simulator = Pretty good state
+- Peer to peer program = pretty good state
+- RAD document = pretty good state, could use business version
 - Sequence diagram
 - CI/CD
 - One line set up.
