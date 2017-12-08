@@ -13,10 +13,10 @@ func receive(conn net.Conn){
 	dec := json.NewDecoder(conn)
 	msg := new(Message)
 
-	InboundTCP.Inc()
+
 
 	for {
-
+		InboundTCP.Inc()
 		if err := dec.Decode(msg); err != nil { return }
 
 		if testing {log.Print("\nReceieved Message: \n Kind: "+msg.Kind+ "    MSG: "+ msg.MSG+"    Username: "+ msg.Username+"    IP: "+ msg.IP+ "     Number of Peers: ", len(msg.Usernames), "     Number of Connections: ",len(msg.IPs), "\n\n")}

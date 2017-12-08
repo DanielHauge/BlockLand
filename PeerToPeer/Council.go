@@ -22,7 +22,7 @@ func createDiscussion(owner string, data string) (dis Discussion) {
 }
 
 var (
-
+	DiscussionQueWasNotFull bool
 	DiscussionInSession bool
 	DiscussionSpeaker string
 	DiscussionTopic string
@@ -38,7 +38,7 @@ func PutDiscussionInQueue(dis Discussion){
 }
 
 func StartDiscussion(dis Discussion) {
-	if (DiscussionInSession){
+	if (DiscussionInSession || DiscussionQueWasNotFull){
 
 
 		Proposal := createMessage("DISCUSSION-TO-QUEUE", Name, getMyIP(), "Here's my list of participants", make([]string, 0), make([]string, 0))
@@ -199,8 +199,11 @@ func EndDiscussion(){
 	DiscussionInSession = false
 	PromInSession.Set(0)
 	if len(DiscussionQueue) > 0{
+		DiscussionQueWasNotFull = true
 		NewDiscussion := <-DiscussionQueue
 		if NewDiscussion.owner == Name{
+			time.Sleep(time.Second*5)
+			DiscussionQueWasNotFull = false
 			StartDiscussion(NewDiscussion)
 		}
 	}
@@ -218,8 +221,12 @@ func AbourtDiscussion(){
 	DiscussionInSession = false
 	PromInSession.Set(0)
 	if len(DiscussionQueue) > 0{
+		DiscussionQueWasNotFull = true
 		NewDiscussion := <-DiscussionQueue
 		if NewDiscussion.owner == Name{
+
+			time.Sleep(time.Second*5)
+			DiscussionQueWasNotFull = false
 			StartDiscussion(NewDiscussion)
 		}
 	}
