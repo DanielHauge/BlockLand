@@ -195,7 +195,6 @@ func EndDiscussion(){
 	DiscussionSpeakerPort = ""
 	DiscussionAgreement = map[string]bool{}
 	DiscussionParticipants = make([]string,0)
-	PromDiscussionParticipants.Set(float64(len(DiscussionParticipants)))
 	DiscussionInSession = false
 	PromInSession.Set(0)
 	if len(DiscussionQueue) > 0{
@@ -217,7 +216,6 @@ func AbourtDiscussion(){
 	DiscussionSpeakerPort = ""
 	DiscussionAgreement = map[string]bool{}
 	DiscussionParticipants = make([]string,0)
-	PromDiscussionParticipants.Set(float64(len(DiscussionParticipants)))
 	DiscussionInSession = false
 	PromInSession.Set(0)
 	if len(DiscussionQueue) > 0{

@@ -66,11 +66,13 @@ func HeadCount(who string, answer string, users []string){
 		} else {
 			log.Println("HeadCount Status: NO!")
 			DiscussionAgreement[who] = false
+			DiscussionParticipants = append(DiscussionParticipants, who)
 		}
 
 	} else {
 		log.Println("HeadCount Status: NO!")
 		DiscussionAgreement[who] = false
+		DiscussionParticipants = append(DiscussionParticipants, who)
 	}
 }
 

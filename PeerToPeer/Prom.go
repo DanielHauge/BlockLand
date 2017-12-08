@@ -90,7 +90,7 @@ func init(){
 
 
 func ServceMetrics (w http.ResponseWriter, r *http.Request){
-
+	PromDiscussionParticipants.Set(float64(len(DiscussionParticipants)))
 	promhttp.Handler().ServeHTTP(w, r)
 	JoinsOrLeaves.Set(0)
 }
