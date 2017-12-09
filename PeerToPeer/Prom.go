@@ -92,6 +92,7 @@ func init(){
 	prometheus.MustRegister(PromSpeaker)
 	prometheus.MustRegister(PromInSession)
 	prometheus.MustRegister(JoinsOrLeaves)
+	prometheus.MustRegister(QueueSize)
 
 }
 
