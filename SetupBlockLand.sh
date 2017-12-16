@@ -65,9 +65,12 @@ EOF
 
 echo -e "By Group L / 8: Emmely (cph-el69) & Kristian (cph-kf96) & Daniel (cph-dh136)"   
 echo -e "Node API's are available on 8080, 8081, 8082, 8083, 8084, 8085, 8086"
+echo -e "Available calls to the API's can be found here: https://github.com/DanielHauge/BlockLand/wiki/API-Endpoint-calls"
 echo -e "Grafana Monitoring is running on port 3000."
 echo -e "However, to import the dashboard do the following steps"
-echo -e " - Go to grafana on port 3000 and create a datasource as: Prometheus datasource with url as http://Prom:9090 and click save. "
+echo -e " - Go to grafana on port 3000 and create a datasource as: Prometheus datasource with url as http://Prom:9090 and set as default click save. "
 echo -e " - Copy the content of this file: $(pwd)/BlockLand/dashboard.json "
 echo -e " - Import the dashboard by pasting it into Import dashboard with json text"
+echo -e " If troubles with grafana setup arises, screenshots can be found here: https://github.com/DanielHauge/BlockLand/wiki/GrafanaSetupHelp"
 echo -e " From here you can monitor the network from grafana "
+echo -e "Simulator starts in 90 seconds"
