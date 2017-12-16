@@ -29,17 +29,17 @@ func main() {
 
 	go startSimulation("http://Node1:8080")
 	time.Sleep(time.Second*5)
-	go startSimulation("http://Node2:8081")
+	go startSimulation("http://Node2:8080")
 	time.Sleep(time.Second*10)
-	go startSimulation("http://Node3:8082")
+	go startSimulation("http://Node3:8080")
 	time.Sleep(time.Second*10)
-	go startSimulation("http://Node4:8083")
+	go startSimulation("http://Node4:8080")
 	time.Sleep(time.Second*10)
-	go startSimulation("http://Node5:8084")
+	go startSimulation("http://Node5:8080")
 	time.Sleep(time.Second*10)
-	go startSimulation("http://Node6:8085")
+	go startSimulation("http://Node6:8080")
 	time.Sleep(time.Second*10)
-	startSimulation("http://Node7:8086")
+	startSimulation("http://Node7:8080")
 
 
 
