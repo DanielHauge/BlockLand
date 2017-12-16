@@ -89,4 +89,4 @@ services:
     - Node5
     - Node6
     - Node7
-    
+    entrypoint: ./go
