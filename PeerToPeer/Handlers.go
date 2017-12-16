@@ -8,6 +8,7 @@ import (
  	"github.com/shurcooL/github_flavored_markdown"
 	"bytes"
 	"gopkg.in/russross/blackfriday.v2"
+	"encoding/json"
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {
@@ -18,29 +19,23 @@ func Index(w http.ResponseWriter, r *http.Request) {
 	msg.send_all()
 }
 
-/*
 func Join(w http.ResponseWriter, r *http.Request){
 
-
-
-	msg := createMessage("JOIN", Name, getMyIP(), Name, make([]string, 0), make([]string, 0))
-	msg.send_all()
-	BlockChain.AddBlock("New Block Hello")
-	fmt.Fprintf(w, "Data: %s\n", "Discussion Started")
-}
-*/
-
-func Join(w http.ResponseWriter, r *http.Request){
 
 	dis := createDiscussion(Name, Name+":join")
 	go StartDiscussion(dis)
-	fmt.Fprintf(w, "Data: %s\n", "Discussion Started")
+	fmt.Fprintf(w, "Data: %v\n", "Discussion Started", dis.Data)
+	JoinsOrLeaves.Inc()
 }
+
+
 
 func UnJoin(w http.ResponseWriter, r *http.Request){
 
-	msg := createMessage("UNJOIN", Name, getMyIP(), Name, make([]string, 0), make([]string, 0))
-	msg.send_all()
+	dis := createDiscussion(Name, Name+":leave")
+	go StartDiscussion(dis)
+	fmt.Fprintf(w, "Data: %v\n", "Discussion Started", dis.Data)
+	JoinsOrLeaves.Inc()
 }
 
 func Status(w http.ResponseWriter, r *http.Request){
@@ -116,17 +111,6 @@ func GetChain(w http.ResponseWriter, r *http.Request){
 		pow := GenerateProofOfWork(block)
 		buffer.WriteString("| "+fmt.Sprintf("%x", test)+" | "+strconv.Itoa(block.Nounce)+" | "+fmt.Sprintf("%s", block.Data) + " | "+ fmt.Sprintf("%x", block.Hash)+" | "+fmt.Sprintf("%x", block.PrevBlockHash)+" | "+fmt.Sprintf("%s", strconv.FormatBool(pow.InspectGemCarat()))+" |\n")
 
-		/*
-		fmt.Fprintf(w,"Number: %x\n", test)
-		fmt.Fprintf(w, "Nounce: %v\n", block.Nounce)
-		fmt.Fprintf(w, "Data: %s\n", block.Data)
-		fmt.Fprintf(w,"Hash: %x\n", block.Hash)
-		fmt.Fprintf(w,"Prev. Hash: %x\n", block.PrevBlockHash)
-		fmt.Fprintf(w, "PoW: %s\n", strconv.FormatBool(pow.InspectGemCarat()))
-
-		fmt.Fprintln(w)
-		*/
-
 		if len(block.PrevBlockHash) == 0 {
 			break
 		}
@@ -136,4 +120,51 @@ func GetChain(w http.ResponseWriter, r *http.Request){
 	markdown := blackfriday.Run([]byte(buffer.String()))
 	rendered := github_flavored_markdown.Markdown(markdown)
 	w.Write(rendered)
+}
+
+func GetQueue(w http.ResponseWriter, r *http.Request){
+
+	var buffer bytes.Buffer
+	queue := ConstructQueue()
+	mypos := "\n\n### You are not in queue\n\n"
+	buffer.WriteString("# Block-Land Queue\n\n")
+	buffer.WriteString("User: "+Name+"\n\n")
+	buffer.WriteString("| Queue Number | User |\n")
+	buffer.WriteString("|:------------:| ----:|\n")
+	if debugging{ log.Println(len(queue))}
+
+	for i, u := range queue{
+		if debugging{ log.Println(strconv.Itoa(i)+" - "+u)}
+
+		buffer.WriteString("| "+strconv.Itoa(i+1)+" | "+u+" |\n")
+		if (u == Name){
+			mypos = "\n\n### You are at position: "+strconv.Itoa(i+1)+"\n\n"
+		}
+	}
+	buffer.WriteString(mypos)
+
+	markdown := blackfriday.Run([]byte(buffer.String()))
+	rendered := github_flavored_markdown.Markdown(markdown)
+	w.Write(rendered)
+}
+
+func GetSimulationData(w http.ResponseWriter, r *http.Request){
+	qu := ConstructQueue()
+	n := 0
+	if debugging{log.Println(len(qu))}
+	for i, u := range qu{
+		if debugging{log.Println(u) }
+
+		if u == Name{
+			n = i+1
+		}
+	}
+
+	QS := &QueueStatus{Queue:qu,Queuenumber:n}
+	if debugging{log.Println(QS.Queue[0]) }
+
+	msgs, err := json.Marshal(QS); if err != nil {log.Println(err.Error())}
+	if debugging{ log.Println(string(msgs))}
+
+	fmt.Fprint(w, string(msgs))
 }

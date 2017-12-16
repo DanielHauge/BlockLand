@@ -5,11 +5,13 @@ import (
 	"net/http"
 	"os"
 	"sync"
+
 )
 
 // Args= 1: host, 2: Username, 3: Port
 var chainrequest = false
 var initialized = false
+var debugging = false
 
 var wg sync.WaitGroup
 
@@ -26,14 +28,14 @@ func main() {
 		chainrequest = true
 		go introduceMyself(os.Args[1]);
 		log.Println("Connecting to peers")
-		} else {
+	} else {
 			log.Println("I'm the first peer on the network, therefor will not introduce myself")
 			BlockChain = NewBlockChain()
 			log.Println("I'm finished! Mining first block")
 			initialized = true
 			wg.Done()
+	}
 
-		}
 
 
 
@@ -45,3 +47,4 @@ func main() {
 
 
 }
+

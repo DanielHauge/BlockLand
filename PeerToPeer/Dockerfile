@@ -25,12 +25,11 @@ COPY PeerCommunicationsProtocol.go PeerCommunicationsProtocol.go
 COPY PeersControlCenter.go PeersControlCenter.go
 COPY Router.go Router.go
 COPY Routes.go Routes.go
+COPY QueueHQ.go QueueHQ.go
+COPY Prom.go Prom.go
 
 
 EXPOSE 8080
-EXPOSE 8081
-EXPOSE 8082
-EXPOSE 8083
-EXPOSE 8084
+
 
 RUN go build

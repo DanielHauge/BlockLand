@@ -35,6 +35,7 @@ func (msg *Message) send_all(){
 	for _,peerConnection := range Connections{
 		enc := json.NewEncoder(peerConnection)
 		enc.Encode(msg)
+		OutboundTCP.Inc()
 	}
 }
 
@@ -42,6 +43,7 @@ func (msg *Message) send_all(){
 func (msg *Message) sendPrivate(receiver string){
 	if testing {log.Println("sendPrivate")}
 	if alreadyAUser(receiver){
+		OutboundTCP.Inc()
 		peerConnection:=Connections[receiver]
 		enc:=json.NewEncoder(peerConnection)
 		enc.Encode(msg)

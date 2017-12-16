@@ -38,7 +38,7 @@ func CountVotes(who string, answer string){
 		DiscussionAgreement[who] = true
 
 	} else {
-		log.Println("HeadCount Status: NO!")
+		log.Println("HeadCount Status: NO! from: "+who)
 		DiscussionAgreement[who] = false
 	}
 }

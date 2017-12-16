@@ -27,9 +27,9 @@ var routes = Routes{
 	},
 
 	Route{
-		"Unjoin",
-		"DELETE",
-		"/join",
+		"Leave queue",
+		"GET",
+		"/leave",
 		UnJoin,
 	},
 
@@ -58,6 +58,24 @@ var routes = Routes{
 		"GET",
 		"/chain",
 		GetChain,
+	},
+	Route{
+		"List Queue",
+		"GET",
+		"/queue",
+		GetQueue,
+	},
+	Route{
+		"SIM-Get",
+		"GET",
+		"/sim",
+		GetSimulationData,
+	},
+	Route{
+		"Metrics",
+		"GET",
+		"/metrics",
+		ServceMetrics,
 	},
 
 }
