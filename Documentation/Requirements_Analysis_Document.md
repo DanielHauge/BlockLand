@@ -71,38 +71,41 @@ The proposed product would be a P2P system with a API and a database, that enabl
 ### B. Functional requirements
 
 ##### API system Functional requirements
-- The system must be able to Mine a hashvalue
-- The system must be able to submit a mined hashvalue
-- The system must be able to verify a hash value
-- The system must be able to update it's database
-- The system must be able to share it's database content (both blockchain and connected systems)
-- The system must be able to connect to another system
+- API can connect to new API's
+- API accepts new connections
+- API shares API connections on call
+- API keeps records of blockchain data locally
+- API shares records on call
+- API accepts join calls
+- API shares status on curl call
+- API must accept a join call to initiate a council meeting
+- API tracks council meetings
+- API must be host of council meeting to mine hashvalue
+- API must verify all hashvalues from council meeting
+- API can stop council meeting if verification goes wrong
+- API can only save a hashvalue if the council meeting finishes
 
 ------------------------------------------
 ##### Human(API) User Functional requirements
-- The User must be able to instigate a new mining operation
-- The User must be able to receive update on system status
+- User can start API's without connection string
+- User can start API's with connection string
+- User can initiate a join call on specified API
+- User can curl API for all informations
 
 ### C. Nonfunctional requirements
 ____________
 #### a. Usability
-- We will not put too much effort into the usability of the system.
-#### b. Reliability
-- The system cannot lose any information which has been sent from another system.
-- the system cannot allow other systems to instigate false hashvalues in the shared blockchain.
-#### c. Performance
-- The system needs to be able to handle multiple users at one time.
-#### d. Supportability
+- usability will be on a minimum user interface in the form of text design.
+#### b. Deployability
+- the system should be deployable from a single bash script.
+#### c. Supportability
 - (extra)The system needs to work on popular browsers such as Google Chrome, Mozilla Firefox, Safari, Internet Explorer 9.
-#### e. Implementation
+#### d. Implementation
 - The system needs to have a API for both the systems interaction with other systems, and for user interaction.
+#### e. safety
+- the system must not allow any data to be tampered with.
 #### f. Interface
-- The system needs to interact with a database for storage of information.
-- The system needs to interact with a API for the Hive and outside users.
-#### g. Packing
-- No Packing(physical) requirements.
-#### h. Legal
-- No legal requirements
+- The system needs to allow interaction from a web browser.
 
 ### D. Systemmodels
 ____________
