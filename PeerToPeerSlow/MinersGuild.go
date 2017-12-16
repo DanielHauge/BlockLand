@@ -7,6 +7,7 @@ import (
 	"math"
 	"crypto/sha256"
 	"log"
+	"time"
 )
 
 const targetBits = 24
