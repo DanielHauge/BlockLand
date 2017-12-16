@@ -11,8 +11,8 @@ var RandBool *rand.Rand
 var RandTime *rand.Rand
 
 func main() {
-	log.Println("Waiting 30 seconds before starting!")
-	for i:=30; i>0;i--  {
+	log.Println("Waiting 120 seconds before starting!")
+	for i:=120; i>0;i--  {
 		log.Println(strconv.Itoa(i)+" Seconds untill start")
 		time.Sleep(time.Second)
 	}
