@@ -12,7 +12,7 @@ var RandTime *rand.Rand
 
 func main() {
 	log.Println("Waiting 30 seconds before starting!")
-	for i:=1; i>0;i--  {
+	for i:=30; i>0;i--  {
 		log.Println(strconv.Itoa(i)+" Seconds untill start")
 		time.Sleep(time.Second)
 	}
@@ -27,19 +27,19 @@ func main() {
 	RandTime = SleepSource
 
 
-	go startSimulation("http://188.226.166.33:8080")
+	go startSimulation("http://Node1:8080")
 	time.Sleep(time.Second*5)
-	go startSimulation("http://188.226.166.33:8081")
+	go startSimulation("http://Node2:8081")
 	time.Sleep(time.Second*10)
-	go startSimulation("http://188.226.166.33:8082")
+	go startSimulation("http://Node3:8082")
 	time.Sleep(time.Second*10)
-	go startSimulation("http://188.226.166.33:8083")
+	go startSimulation("http://Node4:8083")
 	time.Sleep(time.Second*10)
-	go startSimulation("http://188.226.166.33:8084")
+	go startSimulation("http://Node5:8084")
 	time.Sleep(time.Second*10)
-	go startSimulation("http://188.226.166.33:8085")
+	go startSimulation("http://Node6:8085")
 	time.Sleep(time.Second*10)
-	startSimulation("http://188.226.166.33:8086")
+	startSimulation("http://Node7:8086")
 
 
 
