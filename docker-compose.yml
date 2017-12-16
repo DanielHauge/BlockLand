@@ -1,12 +1,12 @@
 version: '3'
 services:
    Node1:
-    image: p2ptest:2
+    image: p2pbl:fast
     ports:
       - "8080:8080"
     entrypoint: ./go 127.0.0.1 Daniel :8080
    Node2:
-    image: p2ptest:2
+    image: p2pbl:fast
     links: 
     - Node1
     ports:
@@ -15,7 +15,7 @@ services:
     depends_on:
           - "Node1"
    Node3:
-    image: p2ptest:2
+    image: p2pbl:fast
     links: 
     - Node1
     ports:
@@ -24,7 +24,7 @@ services:
     depends_on:
       - "Node1"
    Node4:
-    image: p2ptest:2
+    image: p2pbl:fast
     links: 
     - Node1
     ports:
@@ -33,7 +33,7 @@ services:
     depends_on:
           - "Node1"
    Node5:
-    image: p2ptest:2
+    image: p2pbl:slow
     links: 
     - Node1
     ports:
@@ -42,7 +42,7 @@ services:
     depends_on:
           - "Node1"
    Node6:
-    image: p2ptest:2
+    image: p2pbl:slow
     links: 
     - Node1
     ports:
@@ -51,7 +51,7 @@ services:
     depends_on:
           - "Node1"
    Node7:
-    image: p2ptest:2
+    image: p2pbl:slow
     links:
     - Node1
     ports:
