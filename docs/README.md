@@ -15,6 +15,7 @@ wget -O - https://raw.githubusercontent.com/DanielHauge/BlockLand/master/SetupBl
 #### Runs that are tested and works:
 - We have tested with a digital ocean droplet of 512mb size, which works.
 - We have tested on a ubuntu 16.04 vagrant image.
+
 ```ruby
 Vagrant.configure("2") do |config|
 
@@ -31,6 +32,7 @@ end
 end
 ```
 - We have also tested with a debian vagrant image hat works:
+
 ```ruby
 Vagrant.configure("2") do |config|
 
