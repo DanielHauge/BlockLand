@@ -1,4 +1,4 @@
-## Setup
+# Setup
 #### Pre-requisite
 Before you are able to setup a demo of blockland, you will need to: 
 - Setup a linux machine and have access to root user (Be root user when running one-liner). with atleast 512 mb of ram.
