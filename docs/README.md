@@ -62,3 +62,49 @@ Click me!
 
 
 [![Demo Test run](https://media.giphy.com/media/xUOxf6LTn2NMizxUUE/giphy.gif)](https://www.youtube.com/watch?v=PJya4nOu0hg&feature=youtu.be)
+
+
+##### The BlockChain Program - a brief description
+
+We have written the program in Go. We use the following technologies to set up the program, Go lang, Docker, Docker Compose and a Linux machine.
+In this documentation we will only link to [PeerToPeer](https://github.com/DanielHauge/BlockLand/tree/master/PeerToPeer) software however the [PeerToPeerSlow](https://github.com/DanielHauge/BlockLand/tree/master/PeerToPeerSlow) works in the same way.
+
+### Architecture
+
+Our BlockChain program runs on a network of distributed nodes. 
+It uses a peer to peer architecture consisting of peers that are equal. A Peer is also referred as a node in the program and documentation.
+Each peer runs on a docker container. The Peers communicate via TCP as a network protocol and JSON is used as the data exchange format.
+Each peer runs the BlockChain software and has a API endpoint. The [API endpoint](https://github.com/DanielHauge/BlockLand/wiki/API-Endpoint-calls) is used to trigger actions and BlockChain transactions.
+ 
+[![Documentation/UML/Main.png](Documentation/UML/Main.png)](Documentation/UML/Main.png)
+
+
+#### BlockChain - Implemented actions
+
+- Connect to Peer to Peer network. 
+ The peers (nodes) are instantiated with a [docker-compose.yml](https://github.com/DanielHauge/BlockLand/blob/master/docker-compose.yml).
+It uses the Docker image build with the [dockerfile](https://github.com/DanielHauge/BlockLand/blob/master/PeerToPeer/Dockerfile). 
+The arguments for the docker image can be found in the docker-compose file under ```entrypoint: ./go 127.0.0.1 Daniel :8080```.   
+ 
+- Disconnect to Peer to Peer network. - This functionality is implemented but not used.
+ 
+#### BlockChain Transactions
+
+[![Documentation/UML/Usecasediagram1.png ](Documentation/UML/Usecasediagram1.png )](Documentation/UML/Usecasediagram1.png )
+
+#### Mining of Blocks 
+
+We are using the Hash algorithm of Char56.
+For the proof of work we are using nonce that give six zeros in the beginning of the hash.
+
+
+#### Consensus algorithm of your choice, etc.
+
+[![Documentation/NEW_BlocklandCouncilMeetingFlow.png ](Documentation/NEW_BlocklandCouncilMeetingFlow.png )](Documentation/NEW_BlocklandCouncilMeetingFlow.png )
+
+
+Flaw: If something occurs at the exact same time, the business logic becomes very heavy, they will need to agree upon who came first and stuff.
+
+Link to [Wiki-page](https://github.com/DanielHauge/BlockLand/wiki).
+
+##### 
