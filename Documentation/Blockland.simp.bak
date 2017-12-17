@@ -17,7 +17,7 @@
       </counter>
       <counter>
         <item-type type-id="sequence-action" type="UmlSequenceAction" />
-        <value>21</value>
+        <value>23</value>
       </counter>
       <counter>
         <item-type type-id="activation-bar" type="UmlActivationBar" />
@@ -35,7 +35,7 @@
       </counter>
       <counter>
         <item-type type-id="sequence-action" type="UmlSequenceAction" />
-        <value>22</value>
+        <value>24</value>
       </counter>
       <counter>
         <item-type type-id="activation-bar" type="UmlActivationBar" />
@@ -51,7 +51,7 @@
       </counter>
       <counter>
         <item-type type-id="" type="AbstractElementGroup" />
-        <value>369</value>
+        <value>113</value>
       </counter>
     </entity-ids>
     <diagrams>
@@ -611,7 +611,7 @@
           </item>
         </layer>
       </diagram>
-      <diagram type="uml-sequence" id="p6511778201074cb8a29868ebd24540d6_572758036" name="SequenceDiagram2" order-index="2" overview-order-index="0" uid="" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="552,-55" zoom="1.025">
+      <diagram type="uml-sequence" id="p6511778201074cb8a29868ebd24540d6_572758036" name="SequenceDiagram Blockland Council meeting flow" order-index="2" overview-order-index="0" uid="" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="540,755" zoom="1.025">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -623,7 +623,7 @@
           </authors>
           <description />
           <creation-date>12/17/2017 19:29:27</creation-date>
-          <change-date>12/17/2017 21:01:14</change-date>
+          <change-date>12/17/2017 21:23:28</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
@@ -649,7 +649,7 @@
           </item>
           <item id="di562138984142573608" cid="SM001" type="sequence-action" name="Message1" style-class="" visibility="package" change-tracking-state="added" creator="P5c440bc05a1040029ac066c6b5ce61e0" creation-date="12/16/2017 17:49:02">
             <style class="default" />
-            <sequence-action type="call" message="Join call: HTTP JOIN" is-asynchronous="false" from="di799139624264339702" to="di585092569275330679" return-value="" assign-to-variable="">
+            <sequence-action type="call" message="Join call: HTTP JOIN/UNJOIN" is-asynchronous="false" from="di799139624264339702" to="di585092569275330679" return-value="" assign-to-variable="">
               <parameters />
             </sequence-action>
           </item>
@@ -662,7 +662,7 @@
           </item>
           <item id="di698777866284004898" cid="SM002" type="sequence-action" name="Message2" style-class="" visibility="package" change-tracking-state="added" creator="P5c440bc05a1040029ac066c6b5ce61e0" creation-date="12/16/2017 17:49:26">
             <style class="default" />
-            <sequence-action type="call" message="Start discussion: TCP SESSION-PROPOSITION" is-asynchronous="false" from="di585092569275330679" to="di608876085653507667" return-value="" assign-to-variable="">
+            <sequence-action type="call" message="Start discussion: TCP SESSION-PROPOSITION" is-asynchronous="true" from="di585092569275330679" to="di608876085653507667" return-value="" assign-to-variable="">
               <parameters />
             </sequence-action>
           </item>
@@ -672,7 +672,7 @@
           </item>
           <item id="di529141937856873086" cid="SM006" type="sequence-action" name="Message6" style-class="" visibility="package" change-tracking-state="added" creator="P5c440bc05a1040029ac066c6b5ce61e0" creation-date="12/16/2017 17:50:41">
             <style class="default" />
-            <sequence-action type="send" message="Start discussion: TCP SESSION-PROPOSITION" is-asynchronous="false" from="di585092569275330679" to="di239353230528192234" return-value="" assign-to-variable="">
+            <sequence-action type="send" message="Start discussion: TCP SESSION-PROPOSITION" is-asynchronous="true" from="di585092569275330679" to="di239353230528192234" return-value="" assign-to-variable="">
               <parameters />
             </sequence-action>
           </item>
@@ -682,7 +682,7 @@
           </item>
           <item id="di314972427642708069" cid="SM008" type="sequence-action" name="Message8" style-class="" visibility="package" change-tracking-state="added" creator="P5c440bc05a1040029ac066c6b5ce61e0" creation-date="12/16/2017 17:51:11">
             <style class="default" />
-            <sequence-action type="call" message="Start discussion: TCP SESSION-PROPOSITION" is-asynchronous="false" from="di585092569275330679" to="di198068578432158028" return-value="" assign-to-variable="">
+            <sequence-action type="call" message="Start discussion: TCP SESSION-PROPOSITION" is-asynchronous="true" from="di585092569275330679" to="di198068578432158028" return-value="" assign-to-variable="">
               <parameters />
             </sequence-action>
           </item>
@@ -692,7 +692,7 @@
           </item>
           <item id="di908014615670879047" cid="SM010" type="sequence-action" name="Message10" style-class="" visibility="package" change-tracking-state="added" creator="P5c440bc05a1040029ac066c6b5ce61e0" creation-date="12/16/2017 17:52:21">
             <style class="default" />
-            <sequence-action type="call" message="Yes : TCP SESSION-HEAD-COUNT" is-asynchronous="false" from="di697237845637337271" to="di280970167376744533" return-value="" assign-to-variable="">
+            <sequence-action type="call" message="Yes : TCP SESSION-HEAD-COUNT" is-asynchronous="true" from="di697237845637337271" to="di280970167376744533" return-value="" assign-to-variable="">
               <parameters />
             </sequence-action>
           </item>
@@ -706,7 +706,7 @@
           </item>
           <item id="di118216163237002791" cid="SM011" type="sequence-action" name="Message11" style-class="" visibility="package" change-tracking-state="added" creator="P5c440bc05a1040029ac066c6b5ce61e0" creation-date="12/16/2017 17:52:48">
             <style class="default" />
-            <sequence-action type="call" message="Yes : TCP SESSION-HEAD-COUNT" is-asynchronous="false" from="di824190860568397328" to="di280970167376744533" return-value="" assign-to-variable="">
+            <sequence-action type="call" message="Yes : TCP SESSION-HEAD-COUNT" is-asynchronous="true" from="di824190860568397328" to="di280970167376744533" return-value="" assign-to-variable="">
               <parameters />
             </sequence-action>
           </item>
@@ -716,7 +716,7 @@
           </item>
           <item id="di415566566714168320" cid="SM012" type="sequence-action" name="Message12" style-class="" visibility="package" change-tracking-state="added" creator="P5c440bc05a1040029ac066c6b5ce61e0" creation-date="12/16/2017 17:52:59">
             <style class="default" />
-            <sequence-action type="call" message="Yes : TCP SESSION-HEAD-COUNT" is-asynchronous="false" from="di700551704396924457" to="di280970167376744533" return-value="" assign-to-variable="">
+            <sequence-action type="call" message="Yes : TCP SESSION-HEAD-COUNT" is-asynchronous="true" from="di700551704396924457" to="di280970167376744533" return-value="" assign-to-variable="">
               <parameters />
             </sequence-action>
           </item>
@@ -730,7 +730,7 @@
           </item>
           <item id="di228896732335337081" cid="SM013" type="sequence-action" name="Message13" style-class="" visibility="package" change-tracking-state="added" creator="P5c440bc05a1040029ac066c6b5ce61e0" creation-date="12/16/2017 17:55:45">
             <style class="default" />
-            <sequence-action type="call" message="Transaction (Join, Unjoin) : TCP JOINPROPOSITION" is-asynchronous="false" from="di507972786328411946" to="di115950050557285363" return-value="" assign-to-variable="">
+            <sequence-action type="call" message="Transaction (Join, Unjoin) : TCP JOINPROPOSITION" is-asynchronous="true" from="di507972786328411946" to="di115950050557285363" return-value="" assign-to-variable="">
               <parameters />
             </sequence-action>
           </item>
@@ -744,7 +744,7 @@
           </item>
           <item id="di695569992290683698" cid="SM014" type="sequence-action" name="Message14" style-class="" visibility="package" change-tracking-state="added" creator="P5c440bc05a1040029ac066c6b5ce61e0" creation-date="12/16/2017 17:56:26">
             <style class="default" />
-            <sequence-action type="call" message="Transaction (Join, Unjoin) : TCP JOINPROPOSITION" is-asynchronous="false" from="di507972786328411946" to="di336587681221807001" return-value="" assign-to-variable="">
+            <sequence-action type="call" message="Transaction (Join, Unjoin) : TCP JOINPROPOSITION" is-asynchronous="true" from="di507972786328411946" to="di336587681221807001" return-value="" assign-to-variable="">
               <parameters />
             </sequence-action>
           </item>
@@ -754,7 +754,7 @@
           </item>
           <item id="di715001516663288129" cid="SM015" type="sequence-action" name="Message15" style-class="" visibility="package" change-tracking-state="added" creator="P5c440bc05a1040029ac066c6b5ce61e0" creation-date="12/16/2017 17:56:46">
             <style class="default" />
-            <sequence-action type="call" message="Transaction (Join, Unjoin) : TCP JOINPROPOSITION" is-asynchronous="false" from="di507972786328411946" to="di232849708193216997" return-value="" assign-to-variable="">
+            <sequence-action type="call" message="Transaction (Join, Unjoin) : TCP JOINPROPOSITION" is-asynchronous="true" from="di507972786328411946" to="di232849708193216997" return-value="" assign-to-variable="">
               <parameters />
             </sequence-action>
           </item>
@@ -764,7 +764,7 @@
           </item>
           <item id="di798432983414260995" cid="SM010" type="sequence-action" name="Message10" style-class="" visibility="package" change-tracking-state="added" creator="P5c440bc05a1040029ac066c6b5ce61e0" creation-date="12/16/2017 17:52:21">
             <style class="default" />
-            <sequence-action type="call" message="Yes : TCP JOIN-PROPOSITION-ANSWER" is-asynchronous="false" from="di307875920695226350" to="di974633072665805238" return-value="" assign-to-variable="">
+            <sequence-action type="call" message="Yes : TCP JOIN-PROPOSITION-ANSWER" is-asynchronous="true" from="di307875920695226350" to="di507972786328411946" return-value="" assign-to-variable="">
               <parameters />
             </sequence-action>
           </item>
@@ -774,7 +774,7 @@
           </item>
           <item id="di975569522924801711" cid="SM011" type="sequence-action" name="Message11" style-class="" visibility="package" change-tracking-state="added" creator="P5c440bc05a1040029ac066c6b5ce61e0" creation-date="12/16/2017 17:52:48">
             <style class="default" />
-            <sequence-action type="call" message="Yes : TCP JOIN-PROPOSITION-ANSWER" is-asynchronous="false" from="di861603440522395091" to="di974633072665805238" return-value="" assign-to-variable="">
+            <sequence-action type="call" message="Yes : TCP JOIN-PROPOSITION-ANSWER" is-asynchronous="true" from="di861603440522395091" to="di507972786328411946" return-value="" assign-to-variable="">
               <parameters />
             </sequence-action>
           </item>
@@ -784,7 +784,7 @@
           </item>
           <item id="di246123539448089777" cid="SM012" type="sequence-action" name="Message12" style-class="" visibility="package" change-tracking-state="added" creator="P5c440bc05a1040029ac066c6b5ce61e0" creation-date="12/16/2017 17:52:59">
             <style class="default" />
-            <sequence-action type="call" message="Yes : TCP JOIN-PROPOSITION-ANSWER" is-asynchronous="false" from="di451139818230380538" to="di974633072665805238" return-value="" assign-to-variable="">
+            <sequence-action type="call" message="Yes : TCP JOIN-PROPOSITION-ANSWER" is-asynchronous="true" from="di451139818230380538" to="di507972786328411946" return-value="" assign-to-variable="">
               <parameters />
             </sequence-action>
           </item>
@@ -802,7 +802,7 @@
           </item>
           <item id="di182288406667860272" cid="SM019" type="sequence-action" name="Message19" style-class="" visibility="package" change-tracking-state="added" creator="P5c440bc05a1040029ac066c6b5ce61e0" creation-date="12/16/2017 18:04:30">
             <style class="default" />
-            <sequence-action type="call" message="Save tansaction:TCP END" is-asynchronous="false" from="di206145544565189454" to="di422245366441879916" return-value="" assign-to-variable="">
+            <sequence-action type="call" message="Save tansaction : TCP END" is-asynchronous="true" from="di206145544565189454" to="di422245366441879916" return-value="" assign-to-variable="">
               <parameters />
             </sequence-action>
           </item>
@@ -816,7 +816,7 @@
           </item>
           <item id="di268851038582784036" cid="SM020" type="sequence-action" name="Message20" style-class="" visibility="package" change-tracking-state="added" creator="P5c440bc05a1040029ac066c6b5ce61e0" creation-date="12/16/2017 18:04:40">
             <style class="default" />
-            <sequence-action type="call" message="Save tansaction:TCP END" is-asynchronous="false" from="di206145544565189454" to="di490497457806573990" return-value="" assign-to-variable="">
+            <sequence-action type="call" message="Save tansaction : TCP END" is-asynchronous="true" from="di206145544565189454" to="di490497457806573990" return-value="" assign-to-variable="">
               <parameters />
             </sequence-action>
           </item>
@@ -826,7 +826,7 @@
           </item>
           <item id="di793921494818797637" cid="SM021" type="sequence-action" name="Message21" style-class="" visibility="package" change-tracking-state="added" creator="P5c440bc05a1040029ac066c6b5ce61e0" creation-date="12/16/2017 18:05:01">
             <style class="default" />
-            <sequence-action type="call" message="Save tansaction:TCP END" is-asynchronous="false" from="di206145544565189454" to="di279525713438219288" return-value="" assign-to-variable="">
+            <sequence-action type="call" message="Save tansaction : TCP END" is-asynchronous="true" from="di206145544565189454" to="di279525713438219288" return-value="" assign-to-variable="">
               <parameters />
             </sequence-action>
           </item>
@@ -852,7 +852,7 @@
             <layout ax="377" ay="50" awidth="140" aheight="239.5" x="377" y="50" width="140" height="239.5" container-layout="simple" />
           </item>
           <item id="di562138984142573608" iid="ac7750d44d6f42f1b0ccb7b5006802c0" creation-date="12/16/2017 17:49:02" order-index="5" type="sequence-action">
-            <layout x1="457" y1="172" x2="644" y2="172" ax="457" ay="157" awidth="187" aheight="20" x="457" y="157" width="187" height="20" message-x="0" message-y="-10" message-width="170" />
+            <layout x1="457" y1="172" x2="644" y2="172" ax="457" ay="157" awidth="187" aheight="20" x="457" y="157" width="187" height="20" message-x="0" message-y="-10" message-width="208" />
             <sequence-action from="di799139624264339702" to="di585092569275330679" show-sequence-number="false" />
           </item>
           <item id="di799139624264339702" iid="c9b1b36e8ff3460381766b4c91c001bd" container="di336684286672807369" container-iid="d1c5f0a4a435467a8675c39adeeac3da" creation-date="12/16/2017 17:49:02" order-index="6" type="entity">
@@ -907,56 +907,56 @@
             <layout ax="1391" ay="367" awidth="20" aheight="46" x="1391" y="367" width="20" height="46" />
           </item>
           <item id="di684082414813077512" iid="f41a0730ad3440ef8c350c2ee28c20ab" container="di520161216372202939" container-iid="aefffa07aaa042e8a1d3f221b9434160" creation-date="12/16/2017 17:54:49" order-index="21" type="entity">
-            <layout ax="644.5" ay="429" awidth="20" aheight="50" x="644.5" y="429" width="20" height="50" />
+            <layout ax="644.5" ay="419" awidth="20" aheight="45" x="644.5" y="419" width="20" height="45" />
           </item>
-          <item id="di120392199363892483" iid="9e6c3e9202aa486dba14ddabd22fabc6" name="Element1" creation-date="12/16/2017 17:55:17" order-index="22" type="drawing-text">
-            <layout ax="674" ay="444" awidth="113" aheight="20" x="674" y="444" width="113" height="20" />
+          <item id="di328854054913520388" iid="9e6c3e9202aa486dba14ddabd22fabc6" name="Element1" creation-date="12/16/2017 17:55:17" order-index="22" type="drawing-text">
+            <layout ax="674" ay="434" awidth="113" aheight="20" x="674" y="434" width="113" height="20" />
             <drawing-text>
               <text>Count Votes</text>
             </drawing-text>
             <style class="default" />
           </item>
           <item id="di228896732335337081" iid="061ee340db4344a5a8690f2f7005182b" creation-date="12/16/2017 17:55:45" order-index="23" type="sequence-action">
-            <layout x1="664" y1="547" x2="977" y2="547" ax="664" ay="532" awidth="313" aheight="20" x="664" y="532" width="313" height="20" message-x="0" message-y="-12" message-width="272" />
+            <layout x1="664" y1="557" x2="977" y2="557" ax="664" ay="542" awidth="313" aheight="20" x="664" y="542" width="313" height="20" message-x="0" message-y="-12" message-width="272" />
             <sequence-action from="di507972786328411946" to="di115950050557285363" show-sequence-number="false" />
           </item>
           <item id="di507972786328411946" iid="262d73a74dc640ebad7c1c3e3b0b3cf6" container="di520161216372202939" container-iid="aefffa07aaa042e8a1d3f221b9434160" creation-date="12/16/2017 17:55:45" order-index="24" type="entity">
             <layout ax="644.5" ay="537" awidth="20" aheight="302" x="644.5" y="537" width="20" height="302" />
           </item>
           <item id="di115950050557285363" iid="6e63f279c507420fa9d568040feb97ac" container="di621409231113405412" container-iid="9564a120d9bb4f34be5c678f7b3e94e2" creation-date="12/16/2017 17:55:45" order-index="25" type="entity">
-            <layout ax="977" ay="537" awidth="20" aheight="40" x="977" y="537" width="20" height="40" />
+            <layout ax="977" ay="547" awidth="20" aheight="40" x="977" y="547" width="20" height="40" />
           </item>
           <item id="di695569992290683698" iid="0f7d937c6b084de88a19f986dd9eca56" creation-date="12/16/2017 17:56:26" order-index="26" type="sequence-action">
-            <layout x1="664" y1="591" x2="1184" y2="591" ax="664" ay="576" awidth="520" aheight="20" x="664" y="576" width="520" height="20" message-x="-115" message-y="-9" message-width="238" />
+            <layout x1="664" y1="601" x2="1184" y2="601" ax="664" ay="586" awidth="520" aheight="20" x="664" y="586" width="520" height="20" message-x="-115" message-y="-9" message-width="238" />
             <sequence-action from="di507972786328411946" to="di336587681221807001" show-sequence-number="false" />
           </item>
           <item id="di336587681221807001" iid="46162be665344fe0b8b0a96cd6bce641" container="di956969064405944499" container-iid="4a370ae5142042a093161e2fe2712770" creation-date="12/16/2017 17:56:26" order-index="27" type="entity">
-            <layout ax="1184" ay="591" awidth="20" aheight="40" x="1184" y="591" width="20" height="40" />
+            <layout ax="1184" ay="601" awidth="20" aheight="40" x="1184" y="601" width="20" height="40" />
           </item>
           <item id="di715001516663288129" iid="ca9a8541eb9c433d9b291dcb68ffe37c" creation-date="12/16/2017 17:56:46" order-index="28" type="sequence-action">
-            <layout x1="664" y1="645" x2="1391" y2="645" ax="664" ay="630" awidth="727" aheight="20" x="664" y="630" width="727" height="20" message-x="-216" message-y="-13" message-width="220" />
+            <layout x1="664" y1="665" x2="1391" y2="665" ax="664" ay="650" awidth="727" aheight="20" x="664" y="650" width="727" height="20" message-x="-216" message-y="-13" message-width="220" />
             <sequence-action from="di507972786328411946" to="di232849708193216997" show-sequence-number="false" />
           </item>
           <item id="di232849708193216997" iid="245b9751c8d146b8881d2c40e74e8458" container="di127384380882647688" container-iid="67e916cc8084486f9cda154908b6348a" creation-date="12/16/2017 17:56:46" order-index="29" type="entity">
-            <layout ax="1391" ay="645" awidth="20" aheight="40" x="1391" y="645" width="20" height="40" />
+            <layout ax="1391" ay="665" awidth="20" aheight="40" x="1391" y="665" width="20" height="40" />
           </item>
           <item id="di798432983414260995" iid="40de3ca7af0449ffad675ded1bb5e281" creation-date="12/16/2017 17:52:21" order-index="14" type="sequence-action">
-            <layout x1="997" y1="688" x2="667" y2="708" ax="667" ay="688" awidth="320" aheight="20" x="667" y="688" width="320" height="20" message-x="-1" message-y="-10" message-width="258" />
-            <sequence-action from="di307875920695226350" to="di974633072665805238" show-sequence-number="false" />
+            <layout x1="977" y1="704" x2="664" y2="704" ax="664" ay="689" awidth="313" aheight="20" x="664" y="689" width="313" height="20" message-x="-1" message-y="-10" message-width="258" />
+            <sequence-action from="di307875920695226350" to="di507972786328411946" show-sequence-number="false" />
           </item>
           <item id="di307875920695226350" iid="7b3e61b234324986b4840c544b98d3ac" creation-date="12/16/2017 17:52:21" order-index="15" type="entity">
-            <layout ax="977" ay="661.5" awidth="20" aheight="45" x="977" y="661.5" width="20" height="45" />
+            <layout ax="977" ay="680.5" awidth="20" aheight="45" x="977" y="680.5" width="20" height="45" />
           </item>
           <item id="di975569522924801711" iid="156e8cadc5e546e28e52fbfcbbb33756" creation-date="12/16/2017 17:52:48" order-index="17" type="sequence-action">
-            <layout x1="1204" y1="728" x2="667" y2="743" ax="667" ay="728" awidth="527" aheight="15" x="667" y="728" width="527" height="15" message-x="73" message-y="-4" />
-            <sequence-action from="di861603440522395091" to="di974633072665805238" show-sequence-number="false" />
+            <layout x1="1184" y1="763" x2="664" y2="763" ax="664" ay="748" awidth="520" aheight="20" x="664" y="748" width="520" height="20" message-x="73" message-y="-4" />
+            <sequence-action from="di861603440522395091" to="di507972786328411946" show-sequence-number="false" />
           </item>
           <item id="di861603440522395091" iid="e76cf72bd02c4f0899790d55a6daf22c" creation-date="12/16/2017 17:52:48" order-index="18" type="entity">
-            <layout ax="1184" ay="706.5" awidth="20" aheight="47" x="1184" y="706.5" width="20" height="47" />
+            <layout ax="1184" ay="726.5" awidth="20" aheight="47" x="1184" y="726.5" width="20" height="47" />
           </item>
           <item id="di246123539448089777" iid="f2678be1d32e46c28aecc584ba805236" creation-date="12/16/2017 17:52:59" order-index="19" type="sequence-action">
-            <layout x1="1411" y1="746" x2="667" y2="818" ax="667" ay="746" awidth="734" aheight="72" x="667" y="746" width="734" height="72" message-x="-14" message-y="22" message-width="312" />
-            <sequence-action from="di451139818230380538" to="di974633072665805238" show-sequence-number="false" />
+            <layout x1="1391" y1="815" x2="664" y2="815" ax="664" ay="800" awidth="727" aheight="20" x="664" y="800" width="727" height="20" message-x="-14" message-y="22" message-width="312" />
+            <sequence-action from="di451139818230380538" to="di507972786328411946" show-sequence-number="false" />
           </item>
           <item id="di451139818230380538" iid="1f87f97ef5274de18aa6b16fa3b1f6d3" creation-date="12/16/2017 17:52:59" order-index="20" type="entity">
             <layout ax="1391" ay="780" awidth="20" aheight="46" x="1391" y="780" width="20" height="46" />
@@ -964,7 +964,7 @@
           <item id="di868438331894707763" iid="9986a7b8473d4c19a97de4772a26dab6" creation-date="12/16/2017 17:58:50" order-index="30" type="entity">
             <layout ax="644.5" ay="482" awidth="20" aheight="40" x="644.5" y="482" width="20" height="40" />
           </item>
-          <item id="di826964808596605410" iid="cbd15844a85448e5aa2a3571b93b2603" name="Element2" creation-date="12/16/2017 17:58:57" order-index="31" type="drawing-text">
+          <item id="di711702653938342451" iid="cbd15844a85448e5aa2a3571b93b2603" name="Element2" creation-date="12/16/2017 17:58:57" order-index="31" type="drawing-text">
             <layout ax="674.5" ay="492" awidth="109" aheight="20" x="674.5" y="492" width="109" height="20" />
             <drawing-text>
               <text>Mine Block</text>
@@ -982,7 +982,7 @@
             <layout ax="1391" ay="1069" awidth="20" aheight="40" x="1391" y="1069" width="20" height="40" />
           </item>
           <item id="di268851038582784036" iid="90703e12b72640ffa89b87d3cf3defce" creation-date="12/16/2017 18:04:40" order-index="35" type="sequence-action">
-            <layout x1="667" y1="1023" x2="1184" y2="1023" ax="667" ay="1008" awidth="517" aheight="20" x="667" y="1008" width="517" height="20" message-x="-106" message-y="-10" message-width="198" />
+            <layout x1="667" y1="1023" x2="1184" y2="1023" ax="667" ay="1008" awidth="517" aheight="20" x="667" y="1008" width="517" height="20" message-x="-107" message-y="-10" message-width="198" />
             <sequence-action from="di206145544565189454" to="di490497457806573990" show-sequence-number="false" />
           </item>
           <item id="di490497457806573990" iid="b1283dafc3c64d39bfeb11ea0d3d774d" container="di956969064405944499" container-iid="4a370ae5142042a093161e2fe2712770" creation-date="12/16/2017 18:04:40" order-index="36" type="entity">
@@ -998,7 +998,7 @@
           <item id="di340116215933603110" iid="ef934c31f45f421fa5da102b6e079565" creation-date="12/16/2017 17:54:49" order-index="21" type="entity">
             <layout ax="644.5" ay="867" awidth="20" aheight="50" x="644.5" y="867" width="20" height="50" />
           </item>
-          <item id="di120392199363892483" iid="3679ca3e3a1548d88d1293cbf90b9f78" name="Element1" creation-date="12/16/2017 17:55:17" order-index="22" type="drawing-text">
+          <item id="di851536917490029486" iid="3679ca3e3a1548d88d1293cbf90b9f78" name="Element1" creation-date="12/16/2017 17:55:17" order-index="22" type="drawing-text">
             <layout ax="664" ay="882" awidth="113" aheight="20" x="664" y="882" width="113" height="20" />
             <drawing-text>
               <text>Count Votes</text>
