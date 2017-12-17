@@ -64,12 +64,12 @@ Click me!
 [![Demo Test run](https://media.giphy.com/media/xUOxf6LTn2NMizxUUE/giphy.gif)](https://www.youtube.com/watch?v=PJya4nOu0hg&feature=youtu.be)
 
 
-##### The BlockChain Program - a brief description
+#### The BlockChain Program - a brief description
 
 We have written the program in Go. We use the following technologies to set up the program, Go lang, Docker, Docker Compose and a Linux machine.
 In this documentation we will only link to [PeerToPeer](https://github.com/DanielHauge/BlockLand/tree/master/PeerToPeer) software however the [PeerToPeerSlow](https://github.com/DanielHauge/BlockLand/tree/master/PeerToPeerSlow) works in the same way.
 
-### Architecture
+#### Architecture
 
 Our BlockChain program runs on a network of distributed nodes. 
 It uses a peer to peer architecture consisting of peers that are equal. A Peer is also referred as a node in the program and documentation.
@@ -90,7 +90,7 @@ The arguments for the docker image can be found in the docker-compose file under
  
 #### BlockChain Transactions
 
-[![Documentation/UML/Usecasediagram1.png ](Documentation/UML/Usecasediagram1.png )](Documentation/UML/Usecasediagram1.png )
+[![./Documentation/UML/Usecasediagram1.png ](Documentation/UML/Usecasediagram1.png )](Documentation/UML/Usecasediagram1.png )
 
 #### Mining of Blocks 
 
@@ -107,4 +107,3 @@ Flaw: If something occurs at the exact same time, the business logic becomes ver
 
 Link to [Wiki-page](https://github.com/DanielHauge/BlockLand/wiki).
 
-##### 
