@@ -1,7 +1,6 @@
 # BlockLand
 Blockchain project
 
-
 ##### Task
 - RAD document = could use business version
 - Sequence diagram
