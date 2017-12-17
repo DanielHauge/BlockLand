@@ -76,7 +76,7 @@ It uses a peer to peer architecture consisting of peers that are equal. A Peer i
 Each peer runs on a docker container. The Peers communicate via TCP as a network protocol and JSON is used as the data exchange format.
 Each peer runs the BlockChain software and has a API endpoint. The [API endpoint](https://github.com/DanielHauge/BlockLand/wiki/API-Endpoint-calls) is used to trigger actions and BlockChain transactions.
  
-[![Documentation/UML/Main.png](Documentation/UML/Main.png)](Documentation/UML/Main.png)
+[![https://raw.githubusercontent.com/DanielHauge/BlockLand/master/Documentation/UML/Main.png](https://raw.githubusercontent.com/DanielHauge/BlockLand/master/Documentation/UML/Main.png)](https://raw.githubusercontent.com/DanielHauge/BlockLand/master/Documentation/UML/Main.png)
 
 
 #### BlockChain - Implemented actions
