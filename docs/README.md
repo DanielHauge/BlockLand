@@ -5,8 +5,10 @@
 Before you are able to setup a demo of blockland, you will need to: 
 - Setup a linux machine and have access to root user (Be root user). with atleast 512 mb of ram.
 >- If you are using things like vagrant or other tools to manage VM's that have super user permisions but are not inherently root users from the get go. Follow these steps
->>- ```passwd root``` -> Type in a new password
->>- ```su - root``` -> Type in the newly made password
+>>- ```passwd root```
+>>- Type in new password for root
+>>- ```su - root```
+>>- Type in the newly made password to change user to root
 - Machine has to have git installed, if not use this command: ```sudo apt-get install git-all```
 >- Most debian distributions have git installed allready
 
