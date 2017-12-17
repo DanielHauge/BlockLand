@@ -1,5 +1,3 @@
-# Blockland
-
 ## Setup
 #### Pre-requisite
 Before you are able to setup a demo of blockland, you will need to: 
@@ -32,7 +30,25 @@ end
 ```
 - We have also tested with a debian vagrant image hat works:
 ```ruby
-something
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "debian/jessie64"
+  config.vm.network "forwarded_port", guest: 8888, host: 8888, host_ip: "127.0.0.1"
+  config.vm.network "private_network", ip: "192.168.33.13"
+  config.vm.synced_folder ".", "/home/vagrant/sync", disabled: true
+  
+  config.vm.define "Linux", primary: true do |dockermachine|
+	dockermachine.vm.hostname = "Linux"
+	dockermachine.vm.provision "shell", inline: <<-SHELL
+		
+		sudo echo "Ready at 192.168.33.13"
+
+		
+		
+	SHELL
+end
+
+end
 ```
 
 ## Documentation
