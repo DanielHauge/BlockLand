@@ -110,7 +110,7 @@ hash = sha256.Sum256(data)
 We are aware of the following limit to our BlockChain system:
 
 - Discussion queue must be empty when a new node connects. The discussion queue is not tranfered to when a new node connects.
-- Our Blockchain has a lenths of maximum **8.1** blocks. (Calculated from the knowlegde that a block is 185 bytes in our system, and with [TCP packet max size](https://stackoverflow.com/questions/2613734/maximum-packet-size-for-a-tcp-connection)
+- Our Blockchain has a length of maximum **8.1** blocks if a new node wants to join. As per now, it will send the whole blockchain to the new node but after 8.1 blocks it cannot send the whole chain any longer. (Calculated from the knowlegde that a block is 185 bytes in our system, and with [TCP packet max size](https://stackoverflow.com/questions/2613734/maximum-packet-size-for-a-tcp-connection)
 - Calls to the discuss queue can not happen at the same time. If calls have a time slot of 15 ms between is should be no problem.
 - If something occurs at the exact same time, the business logic becomes very heavy.
 
