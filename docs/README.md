@@ -64,14 +64,12 @@ Click me!
 [![Demo Test run](https://media.giphy.com/media/xUOxf6LTn2NMizxUUE/giphy.gif)](https://www.youtube.com/watch?v=PJya4nOu0hg&feature=youtu.be)
 
 
-### The BlockChain Program 
+#### The Idea behind our Blockhain Implementation
 
-#### The Idea behind the Blockhain Implementation
-
-Our idea for the BlockChain is to create a verification for housing queues. In big cities there is often a shortage of apartments and people usually need to stand in a queue for several years to be able to get a lease. 
-I can be tempting to bride people having access to the queueing system, something that has been reported in [news paper](https://www.svt.se/nyheter/lokalt/skane/polisanmals-for-manipulation-av-bostadskon). 
-Those stand in queue have an interest that the queue is not manipulated.
-We have implemented a democratic system with the help of BlockChain where those signing up for the queue can be insured that the queue is not manipulated.
+Our idea for the Blockchain is to create a verifications for a housing queue. In big cities there is often a shortage of apartments and people usually need to stand in queue for several years to be able to get a lease. 
+There is a risk that people having access to the queueing system might manipulate the queue, something that has been reported in the [news papers](https://www.svt.se/nyheter/lokalt/skane/polisanmals-for-manipulation-av-bostadskon) from time to time. 
+Those standing in the housing queue want to be insured that the housing queue is not manipulated.
+We have implemented a democratic system with the help of Blockchain technology guarantees that the queue can not be manipulated.
 We also use a council algorithm ensures that it is time when the request to make a transaction like signing up for the queue and not mining speed that is the determiner factor for who gets to do the transaction first. 
  
 #### A Brief Technical Description
