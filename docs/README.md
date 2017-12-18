@@ -66,9 +66,9 @@ Click me!
 
 #### The Idea behind our Blockhain Implementation
 
-Our idea for the Blockchain is to create a verifications for a housing queue. In big cities there is often a shortage of apartments and people usually need to stand in queue for several years to be able to get a lease. 
+Our idea for the Blockchain is to create verifications for a housing queue. In big cities there is often a shortage of apartments and people usually need to stand in queue for several years to be able to get a lease. 
 There is a risk that people having access to the queueing system might manipulate the queue, something that has been reported in the [news papers](https://www.svt.se/nyheter/lokalt/skane/polisanmals-for-manipulation-av-bostadskon) from time to time. 
-Those standing in the housing queue want to be insured that the housing queue is not manipulated.
+Those standing in the housing queue want to be insured that the queue is not manipulated.
 We have implemented a democratic system with the help of Blockchain technology guarantees that the queue can not be manipulated.
 We also use a council algorithm ensures that it is time when the request to make a transaction like signing up for the queue and not mining speed that is the determiner factor for who gets to do the transaction first. 
  
