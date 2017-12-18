@@ -81,10 +81,6 @@
         <item-type type-id="comment-connector" type="UmlCommentConnector" />
         <value>2</value>
       </counter>
-      <counter>
-        <item-type type-id="" type="AbstractElementGroup" />
-        <value>2</value>
-      </counter>
     </entity-ids>
     <diagrams>
       <counter>
