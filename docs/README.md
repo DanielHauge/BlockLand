@@ -112,5 +112,7 @@ We are aware of the following limit to our BlockChain system:
 - Calls to the discuss queue can not happen at the same time. If calls have a time slot of 15 ms between is should be no problem.
 - If something occurs at the exact same time, the business logic becomes very heavy.
 
-Link to [Wiki-page](https://github.com/DanielHauge/BlockLand/wiki).
+#### More detailed documentation
+
+We have made an elaborate documentation on our [Wiki-page](https://github.com/DanielHauge/BlockLand/wiki).
 
