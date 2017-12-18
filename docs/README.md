@@ -103,7 +103,14 @@ For the proof of work we are using nonce that give six zeros in the beginning of
 [![https://raw.githubusercontent.com/DanielHauge/BlockLand/master/Documentation/NEW_BlocklandCouncilMeetingFlow.png](https://raw.githubusercontent.com/DanielHauge/BlockLand/master/Documentation/NEW_BlocklandCouncilMeetingFlow.png)
 
 
-Flaw: If something occurs at the exact same time, the business logic becomes very heavy, they will need to agree upon who came first and stuff.
+#### Limits of the programs
+
+We are aware of the following limit to our BlockChain system:
+
+- Discussion queue must be empty when a new node connects. The discussion queue is not tranfered to when a new node connects.
+- Our Blockchain has a lenths of maximum **??????????** blocks.
+- Calls to the discuss queue can not happen at the same time. If calls have a time slot of 15 ms between is should be no problem.
+- If something occurs at the exact same time, the business logic becomes very heavy.
 
 Link to [Wiki-page](https://github.com/DanielHauge/BlockLand/wiki).
 
