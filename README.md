@@ -1,9 +1,7 @@
 # BlockLand
 Blockchain project
 
-## Tasks
-- Idea for the project! Philosophi!
+This is a project which was assigned as school project for fall cemester of cph business in system integration course.
 
-## Notes
-- showcase difference in our system from bitcoins: Council vs anarchy. Bitcoins: fastest gets rewarded, not needed for us.
-- Mining speed will not matter for our council style = Structured fairness.
+- [Wiki page](https://github.com/DanielHauge/BlockLand/wiki)
+- [Hand-in report](https://danielhauge.github.io/BlockLand/)
