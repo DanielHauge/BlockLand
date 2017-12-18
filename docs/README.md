@@ -92,13 +92,15 @@ The arguments for the docker image can be found in the docker-compose file under
 
 [![https://raw.githubusercontent.com/DanielHauge/BlockLand/master/Documentation/UML/Usecasediagram1.png](https://raw.githubusercontent.com/DanielHauge/BlockLand/master/Documentation/UML/Usecasediagram1.png)](https://raw.githubusercontent.com/DanielHauge/BlockLand/master/Documentation/UML/Usecasediagram1.png)
 
-#### Mining of Blocks 
+#### Mining of Blocks (Concensus of algorithm)
 
-We are using the Hash algorithm of Char56.
+We are using the Hash algorithm of Sha256. Which is pretty standard in most cases.
 For the proof of work we are using nonce that give six zeros in the beginning of the hash.
+```golang
+hash = sha256.Sum256(data)
+```
 
-
-#### Consensus algorithm of your choice, etc.
+#### Council style instead of Anarchy
 
 [![https://raw.githubusercontent.com/DanielHauge/BlockLand/master/Documentation/NEW_BlocklandCouncilMeetingFlow.png](https://raw.githubusercontent.com/DanielHauge/BlockLand/master/Documentation/NEW_BlocklandCouncilMeetingFlow.png)
 
