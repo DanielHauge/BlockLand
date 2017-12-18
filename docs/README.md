@@ -100,7 +100,7 @@ For the proof of work we are using nonce that give six zeros in the beginning of
 
 #### Consensus algorithm of your choice, etc.
 
-[![https://raw.githubusercontent.com/DanielHauge/BlockLand/master/Documentation/NEW_BlocklandCouncilMeetingFlow.png](Documentation/NEW_BlocklandCouncilMeetingFlow.png)](https://raw.githubusercontent.com/DanielHauge/BlockLand/master/Documentation/NEW_BlocklandCouncilMeetingFlow.png)
+[![https://raw.githubusercontent.com/DanielHauge/BlockLand/master/Documentation/NEW_BlocklandCouncilMeetingFlow.png](https://raw.githubusercontent.com/DanielHauge/BlockLand/master/Documentation/UML/Main.png)](https://raw.githubusercontent.com/DanielHauge/BlockLand/master/Documentation/NEW_BlocklandCouncilMeetingFlow.png)
 
 
 Flaw: If something occurs at the exact same time, the business logic becomes very heavy, they will need to agree upon who came first and stuff.
